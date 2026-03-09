@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Certor™ | Authority Before Execution</title>
+  <meta name="description" content="Certor™ is an architectural authority layer for AI systems — evaluating intent before execution through a permit, block, or defer decision model." />
+  <style>
+    :root {
+      --bg: #07111f;
+      --panel: rgba(16, 26, 45, 0.82);
+      --panel-2: rgba(15, 33, 60, 0.9);
+      --text: #eef4ff;
+      --muted: #aac0e8;
+      --line: rgba(153, 185, 255, 0.18);
+      --accent: #6eb2ff;
+      --accent-2: #8de0ff;
+      --ok: #8ff0c5;
+      --warn: #ffd37a;
+      --danger: #ff97aa;
+      --shadow: 0 24px 70px rgba(0,0,0,.35);
+      --radius: 24px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 10% 10%, rgba(83, 141, 255, 0.22), transparent 28%),
+        radial-gradient(circle at 80% 20%, rgba(40, 209, 255, 0.14), transparent 26%),
+        linear-gradient(180deg, #06111e 0%, #081421 36%, #0a1424 100%);
+      line-height: 1.65;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      backdrop-filter: blur(18px);
+      background: rgba(5, 10, 20, 0.58);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 74px;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 700;
+      letter-spacing: .2px;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, #9fe7ff, #4097ff 58%, #163b7c 100%);
+      box-shadow: 0 0 0 2px rgba(255,255,255,.08), 0 0 35px rgba(90,167,255,.45);
+      position: relative;
+    }
+
+    .brand-mark::after {
+      content: "C";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      color: white;
+      text-shadow: 0 2px 10px rgba(0,0,0,.35);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav-links a:hover { color: white; }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.1);
+      background: linear-gradient(180deg, rgba(126,185,255,.18), rgba(41,82,173,.18));
+      color: white;
+      font-weight: 600;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.09);
+    }
+
+    .button.secondary {
+      background: rgba(255,255,255,.03);
+    }
+
+    .hero {
+      padding: 84px 0 44px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      color: var(--accent-2);
+      background: rgba(116, 194, 255, .09);
+      border: 1px solid rgba(116, 194, 255, .16);
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(40px, 7vw, 74px);
+      line-height: 1.02;
+      margin: 0 0 16px;
+      letter-spacing: -1.8px;
+    }
+
+    .hero p.lead {
+      font-size: clamp(18px, 2.2vw, 22px);
+      color: var(--muted);
+      max-width: 760px;
+      margin: 0 0 26px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .hero-note {
+      color: #c2d6fb;
+      font-size: 14px;
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(17,29,50,.8), rgba(10,18,32,.95));
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: 22px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: -30% auto auto -10%;
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle, rgba(90,167,255,.25), transparent 65%);
+      pointer-events: none;
+    }
+
+    .mini-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.3px;
+      color: #98b8ef;
+      margin-bottom: 10px;
+    }
+
+    .flow {
+      display: grid;
+      gap: 12px;
+    }
+
+    .flow-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 16px;
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.06);
+      border-radius: 18px;
+    }
+
+    .flow-row strong { display: block; }
+    .tag {
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .4px;
+    }
+    .tag.ok { background: rgba(143, 240, 197, .14); color: var(--ok); }
+    .tag.warn { background: rgba(255, 211, 122, .14); color: var(--warn); }
+    .tag.danger { background: rgba(255, 151, 170, .14); color: var(--danger); }
+
+    section {
+      padding: 30px 0 34px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: end;
+      margin-bottom: 22px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      margin: 0;
+      letter-spacing: -.8px;
+    }
+
+    .section-header p {
+      max-width: 640px;
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(15,26,45,.82), rgba(11,20,36,.95));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
+    }
+
+    .card p, .card li {
+      color: var(--muted);
+    }
+
+    .card ul {
+      margin: 14px 0 0 18px;
+      padding: 0;
+    }
+
+    .diagram {
+      padding: 18px;
+      background: linear-gradient(180deg, rgba(12, 23, 40, .85), rgba(10, 19, 34, 1));
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .articles {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .article-card {
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .article-card .badge {
+      width: fit-content;
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.08);
+      color: var(--accent-2);
+      background: rgba(116,194,255,.08);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .4px;
+    }
+
+    .article-card p:last-child { margin-bottom: 0; }
+
+    .visuals {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 18px;
+    }
+
+    .visual-tile {
+      overflow: hidden;
+      min-height: 320px;
+      position: relative;
+      background: linear-gradient(180deg, rgba(18,32,55,.95), rgba(10,19,34,.98));
+    }
+
+    .visual-tile img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      opacity: .96;
+    }
+
+    .visual-placeholder {
+      height: 320px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: #d3e4ff;
+      padding: 24px;
+      background:
+        radial-gradient(circle at 30% 20%, rgba(110,178,255,.22), transparent 24%),
+        linear-gradient(180deg, rgba(24,40,67,.95), rgba(9,17,31,1));
+    }
+
+    .visual-caption {
+      position: absolute;
+      inset: auto 14px 14px 14px;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(5,10,20,.62);
+      border: 1px solid rgba(255,255,255,.08);
+      backdrop-filter: blur(10px);
+      font-size: 14px;
+    }
+
+    .investor {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .metric {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.06);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 26px;
+      margin-bottom: 6px;
+    }
+
+    .footer {
+      padding: 42px 0 70px;
+      color: #9eb6de;
+    }
+
+    .footer-box {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: rgba(10,18,32,.65);
+    }
+
+    .small {
+      font-size: 13px;
+      color: #93abd5;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .articles,
+      .investor,
+      .visuals,
+      .grid-3 { grid-template-columns: 1fr; }
+      .section-header, .footer-box { display: block; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="#top" class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Certor™</span>
+      </a>
+      <div class="nav-links">
+        <a href="#architecture">Architecture</a>
+        <a href="#articles">Articles</a>
+        <a href="#visuals">Visuals</a>
+        <a href="#investors">Investors</a>
+        <a href="#contact" class="button secondary">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Architectural Authority Layer for AI</div>
+          <h1>Authority Before Execution</h1>
+          <p class="lead">
+            Certor™ introduces a new control model for AI systems: an independent authority layer that evaluates intent before action, producing a decision of <strong>Permit</strong>, <strong>Block</strong>, or <strong>Defer</strong> before any downstream execution begins.
+          </p>
+          <div class="hero-actions">
+            <a href="#articles" class="button">Read the Articles</a>
+            <a href="#architecture" class="button secondary">See the Architecture</a>
+          </div>
+          <div class="hero-note">
+            Designed as a framework architecture for safe, auditable, model-agnostic AI operations.
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <div class="mini-label">Featured Visual</div>
+          <img src="certor-before-after.jpg" alt="Before Certor vs With Certor architectural comparison" style="width:100%; border-radius:20px; border:1px solid rgba(255,255,255,.08);" />
+        </aside>
+      </div>
+    </section>
+
+    <section id="architecture">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Architecture Overview</h2>
+          </div>
+          <p>
+            Unlike post-execution monitoring, Certor is positioned before action. It functions as an architectural decision layer between model reasoning and operational systems.
+          </p>
+        </div>
+
+        <div class="grid-3" style="margin-bottom:20px;">
+          <div class="card">
+            <h3>Independent Gate</h3>
+            <p>The authority layer is separated from the acting system, reducing reliance on the model’s own self-control.</p>
+          </div>
+          <div class="card">
+            <h3>Explicit Decision</h3>
+            <p>Every request yields an explicit state: Permit, Block, or Defer, making system behavior easier to explain and audit.</p>
+          </div>
+          <div class="card">
+            <h3>Model-Agnostic Positioning</h3>
+            <p>The architecture is designed to function as an authority layer placed before execution, governing whether downstream actions may proceed.</p>
+          </div>
+        </div>
+
+        <div class="diagram card">
+          <svg viewBox="0 0 1160 450" width="100%" role="img" aria-label="Certor authority-before-execution diagram">
+            <defs>
+              <linearGradient id="g1" x1="0" x2="1">
+                <stop offset="0%" stop-color="#6eb2ff" />
+                <stop offset="100%" stop-color="#8de0ff" />
+              </linearGradient>
+              <linearGradient id="g2" x1="0" x2="1">
+                <stop offset="0%" stop-color="#17345c" />
+                <stop offset="100%" stop-color="#102846" />
+              </linearGradient>
+              <filter id="shadow" x="-20%" y="-20%" width="140%" height="160%">
+                <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="rgba(0,0,0,.45)" />
+              </filter>
+            </defs>
+
+            <rect x="25" y="130" rx="26" ry="26" width="250" height="150" fill="url(#g2)" stroke="rgba(255,255,255,.15)" filter="url(#shadow)"/>
+            <text x="150" y="185" text-anchor="middle" font-size="30" fill="#eef4ff" font-weight="700">AI Model / Agent</text>
+            <text x="150" y="220" text-anchor="middle" font-size="18" fill="#aac0e8">Request · Intent · Context</text>
+
+            <rect x="455" y="95" rx="30" ry="30" width="250" height="220" fill="url(#g1)" opacity="0.18" />
+            <rect x="455" y="110" rx="26" ry="26" width="250" height="190" fill="url(#g2)" stroke="#6eb2ff" stroke-width="2" filter="url(#shadow)"/>
+            <text x="580" y="170" text-anchor="middle" font-size="34" fill="#eef4ff" font-weight="800">Certor</text>
+            <text x="580" y="205" text-anchor="middle" font-size="21" fill="#8de0ff">Authority Gate</text>
+            <text x="580" y="245" text-anchor="middle" font-size="17" fill="#d4e5ff">Permit · Block · Defer</text>
+
+            <rect x="885" y="130" rx="26" ry="26" width="250" height="150" fill="url(#g2)" stroke="rgba(255,255,255,.15)" filter="url(#shadow)"/>
+            <text x="1010" y="185" text-anchor="middle" font-size="29" fill="#eef4ff" font-weight="700">External Systems</text>
+            <text x="1010" y="220" text-anchor="middle" font-size="18" fill="#aac0e8">Apps · APIs · Tools · Infrastructure</text>
+
+            <line x1="275" y1="205" x2="455" y2="205" stroke="#8de0ff" stroke-width="5" stroke-linecap="round"/>
+            <polygon points="455,205 433,193 433,217" fill="#8de0ff"/>
+
+            <line x1="705" y1="205" x2="885" y2="205" stroke="#8de0ff" stroke-width="5" stroke-linecap="round"/>
+            <polygon points="885,205 863,193 863,217" fill="#8de0ff"/>
+
+            <rect x="513" y="345" rx="18" ry="18" width="135" height="50" fill="rgba(143,240,197,.14)" stroke="rgba(143,240,197,.35)"/>
+            <text x="580" y="377" text-anchor="middle" font-size="18" fill="#8ff0c5" font-weight="700">PERMIT</text>
+
+            <rect x="667" y="345" rx="18" ry="18" width="125" height="50" fill="rgba(255,151,170,.14)" stroke="rgba(255,151,170,.35)"/>
+            <text x="730" y="377" text-anchor="middle" font-size="18" fill="#ff97aa" font-weight="700">BLOCK</text>
+
+            <rect x="369" y="345" rx="18" ry="18" width="125" height="50" fill="rgba(255,211,122,.14)" stroke="rgba(255,211,122,.35)"/>
+            <text x="431" y="377" text-anchor="middle" font-size="18" fill="#ffd37a" font-weight="700">DEFER</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section id="articles">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Two Published Layers</h2>
+          </div>
+          <p>
+            The site can preserve the original conceptual publication while adding a second layer that presents the system as an operational architecture rather than a purely theoretical idea.
+          </p>
+        </div>
+
+        <div class="articles">
+          <article class="card article-card">
+            <div class="badge">Article 1 · Conceptual Architecture</div>
+            <h3>Authority Before Execution as an Architectural Principle</h3>
+            <p>
+              Most AI systems are built around execution capability first. Certor frames a different question: who authorizes action before a system acts?
+            </p>
+            <p>
+              The first article presents the core idea of an external authority layer that evaluates requests before execution, rather than trying to repair behavior after the fact.
+            </p>
+            <p>
+              This preserves your original conceptual publication and keeps the early architectural framing visible in public history.
+            </p>
+          </article>
+
+          <article class="card article-card">
+            <div class="badge">Article 2 · Operational Proof</div>
+            <h3>From Concept to Working System Logic</h3>
+            <p>
+              The second article should present the architecture as operationally demonstrated, without exposing proprietary implementation details.
+            </p>
+            <p>
+              It can describe the decision flow, the pre-execution gate, the authorization outcome, and the controlled handoff to downstream systems.
+            </p>
+            <p>
+              That gives you a stronger public narrative: not only a theory of authority, but a system architecture that can actually govern action.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="visuals">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Visual Architecture & Brand Layer</h2>
+          </div>
+          <p>
+            Replace the placeholders below with your approved Certor marketing visuals. This lets the site feel more like a serious AI company while keeping the technical message clean and restrained.
+          </p>
+        </div>
+
+        <div class="visuals">
+          <div class="card visual-tile">
+            <img src="certor-before-after.jpg" alt="Before Certor vs With Certor architectural visual" />
+            <div class="visual-caption">Before and after architectural framing of AI systems with Certor as the authority layer.</div>
+          </div>
+          <div class="card visual-tile">
+            <img src="certor-authority-gate.jpg" alt="Certor authority gate architecture visual" />
+            <div class="visual-caption">Authority Gate flow: Permit, Trace, Policy, Adapter Router, and downstream systems.</div>
+          </div>
+          <div class="card visual-tile">
+            <div class="visual-placeholder">
+              <div>
+                <strong>Optional Visual 03</strong><br>
+                Reserved for a future approved image.
+              </div>
+            </div>
+            <div class="visual-caption">Keep this tile for a future patent-safe brand or investor visual.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="investors">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Investor-Ready Positioning</h2>
+          </div>
+          <p>
+            This section gives the site a stronger startup-grade tone without disclosing proprietary code or protected implementation details.
+          </p>
+        </div>
+
+        <div class="investor">
+          <div class="card">
+            <h3>Why This Framing Works</h3>
+            <p>
+              Certor is not positioned as “another model.” It is positioned as a control architecture that sits before execution and governs whether downstream systems may act.
+            </p>
+            <ul>
+              <li>Model-agnostic positioning</li>
+              <li>Clear permit / block / defer logic</li>
+              <li>Better explainability than post-hoc oversight alone</li>
+              <li>Stronger institutional and enterprise narrative</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>One-Slide Message</h3>
+            <p>
+              Existing AI stacks optimize intelligence and execution. Certor adds a missing layer: authorization before action.
+            </p>
+            <div class="metric-grid">
+              <div class="metric">
+                <strong>Before</strong>
+                AI reasons and acts directly.
+              </div>
+              <div class="metric">
+                <strong>With Certor</strong>
+                AI is filtered through an authority gate first.
+              </div>
+              <div class="metric">
+                <strong>Decision</strong>
+                Permit, Block, or Defer.
+              </div>
+              <div class="metric">
+                <strong>Outcome</strong>
+                Controlled execution with architectural separation.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="container footer-box">
+      <div>
+        <strong>Certor™</strong>
+        <div class="small">Authority Before Execution · Architectural Authority Layer for AI</div>
+      </div>
+      <div class="small">
+        Suggested publishing approach: keep the original article live, add the second article as a new section or page, and preserve the public evolution of the architecture over time.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
