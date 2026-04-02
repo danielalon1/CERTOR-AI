@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Certor™ MVP — Proof of Authority Before Execution</title>
+  <meta name="description" content="Certor MVP demonstrates real-time authority-gated execution: No Permit → No Execution." />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="../portal.html">
+      <div class="brand-mark">C</div>
+      <div class="brand-text">
+        <span>Certor™</span>
+        <small>Authority Before Execution</small>
+      </div>
+    </a>
+  </div>
+</header>
+
+<main class="section">
+  <div class="container">
+
+    <div class="eyebrow">MVP Paper</div>
+    <h1 class="section-title">Certor™ MVP — Proof of Authority Before Execution</h1>
+
+    <p class="section-sub">
+      This document presents the first working proof of an architectural invariant:
+      execution must not occur without explicit authorization.
+    </p>
+
+    <div class="card">
+      <h3>The Core Invariant</h3>
+      <div class="diagram">
+No Permit → No Execution
+      </div>
+    </div>
+
+    <div class="spacer-24"></div>
+
+    <div class="card">
+      <h3>The Problem</h3>
+      <p>
+        Current AI systems rely on model decisions to trigger execution.
+        There is no independent authority layer verifying whether an action should occur.
+      </p>
+    </div>
+
+    <div class="spacer-24"></div>
+
+    <div class="card">
+      <h3>The Certor Approach</h3>
+      <div class="diagram">
+Request
+↓
+Certor Authority Gate
+↓
+Permit / Block / Defer
+↓
+Execution (only if permitted)
+      </div>
+    </div>
+
+    <div class="spacer-24"></div>
+
+    <div class="card">
+      <h3>What the MVP Demonstrates</h3>
+      <ul>
+        <li>Real-time authorization before execution</li>
+        <li>Separation between decision and action</li>
+        <li>External authority layer (not inside the model)</li>
+        <li>Fail-closed behavior (default = no execution)</li>
+      </ul>
+    </div>
+
+    <div class="spacer-24"></div>
+
+    <div class="card">
+      <h3>Conclusion</h3>
+      <p>
+        The Certor MVP proves that authority can be enforced as an architectural layer,
+        independent of model logic, and positioned directly at the execution boundary.
+      </p>
+    </div>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <strong>Certor Technologies Ltd.</strong><br />
+      Certor™ — Authority Before Execution
+    </div>
+    <div>© Certor Technologies Ltd. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>
