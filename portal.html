@@ -8,190 +8,168 @@
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="portal.html">
-        <div class="brand-mark">C</div>
-        <div class="brand-text">
-          <span>Certor™</span>
-          <small>Authority Before Execution</small>
-        </div>
-      </a>
 
-      <button class="nav-toggle" data-nav-toggle>Menu</button>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="portal.html">
+      <div class="brand-mark">C</div>
+      <div class="brand-text">
+        <span>Certor™</span>
+        <small>Authority Before Execution</small>
+      </div>
+    </a>
 
-      <nav class="nav-links" data-nav-menu>
-        <a class="active" href="portal.html">Portal</a>
-        <a href="papers.html">Papers</a>
-        <a href="mvp.html">MVP / Demo</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+    <button class="nav-toggle" data-nav-toggle>Menu</button>
+
+    <nav class="nav-links" data-nav-menu>
+      <a class="active" href="portal.html">Portal</a>
+      <a href="papers.html">Papers</a>
+      <a href="mvp.html">MVP / Demo</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">Architectural Authority Layer for AI</div>
+
+      <h1>Authority Before Execution</h1>
+
+      <p>
+        Execution is no longer a model decision.
+        It is an authority decision.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="authority-before-execution/">Read Foundational Paper</a>
+        <a class="btn btn-secondary" href="mvp/">View MVP Proof</a>
+      </div>
+
+      <div class="hero-badges">
+        <div class="badge">No Permit → No Execution</div>
+        <div class="badge">Permit / Block / Defer</div>
+        <div class="badge">Model-Independent</div>
+      </div>
     </div>
-  </header>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">Architectural Authority Layer for AI</div>
-          <h1>Authority Before Execution</h1>
-          <p>
-            Certor™ introduces the missing authority layer in AI systems:
-            a decision boundary that determines whether execution is allowed
-            before any action is performed.
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="authority-before-execution/">Read the Article</a>
-            <a class="btn btn-secondary" href="papers.html">View Papers</a>
-          </div>
-
-          <div class="hero-badges">
-            <div class="badge">No Permit → No Execution</div>
-            <div class="badge">Permit / Block / Defer</div>
-            <div class="badge">Model-Independent</div>
-          </div>
-        </div>
-
-        <div class="panel">
-          <div class="kicker">Core Flow</div>
-          <div class="flow">
-            <div class="flow-step"><strong>User / Agent</strong><span>Request enters the system</span></div>
-            <div class="flow-arrow">↓</div>
-            <div class="flow-step"><strong>Certor™ Authority Layer</strong><span>Independent authorization boundary</span></div>
-            <div class="flow-arrow">↓</div>
-            <div class="flow-step"><strong>Permit / Block / Defer</strong><span>Explicit decision before action</span></div>
-            <div class="flow-arrow">↓</div>
-            <div class="flow-step"><strong>LLM / Tools / Execution</strong><span>Only proceeds if explicitly allowed</span></div>
-          </div>
-        </div>
+    <div class="panel">
+      <div class="kicker">Core Flow</div>
+      <div class="flow">
+        <div class="flow-step"><strong>User / Agent</strong><span>Request enters the system</span></div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-step"><strong>Certor™ Authority Layer</strong><span>Independent authorization boundary</span></div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-step"><strong>Permit / Block / Defer</strong><span>Explicit decision before action</span></div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-step"><strong>Execution</strong><span>Only proceeds if explicitly allowed</span></div>
       </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">The Problem</h2>
-        <p class="section-sub">
-          Most AI architectures optimize prompting, memory, model selection, tools,
-          and orchestration. But they still lack an independent authority layer
-          that decides whether execution should be allowed at all.
-        </p>
-
-        <div class="grid-3">
-          <div class="card">
-            <div class="kicker">Today</div>
-            <h3>Memory is not authority</h3>
-            <p>Memory improves context and continuity, but it does not decide whether action is permitted.</p>
-          </div>
-          <div class="card">
-            <div class="kicker">Today</div>
-            <h3>Tools are not governance</h3>
-            <p>APIs and integrations expand capability, but they do not create an independent decision boundary.</p>
-          </div>
-          <div class="card">
-            <div class="kicker">Gap</div>
-            <h3>Execution happens too early</h3>
-            <p>In most systems, decision and execution remain too close to one another. Certor separates them.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">The Certor Answer</h2>
-        <p class="section-sub">
-          Certor™ does not replace the model. It governs whether the model is allowed to execute.
-        </p>
-
-        <div class="card">
-          <div class="diagram">User / Agent
-↓
-Certor™ Authority Layer
-↓
-PERMIT / BLOCK / DEFER
-↓
-LLM / Memory / Tools
-↓
-Execution</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">Published Research</h2>
-        <p class="section-sub">
-          The current published material remains available under its existing paths.
-        </p>
-
-        <div class="grid-2">
-          <article class="card paper-card">
-            <div class="kicker">Published Article</div>
-            <h3>Authority Before Execution</h3>
-            <div class="meta">Existing preserved publication path</div>
-            <p class="summary">
-              The foundational article presenting Certor™ as an architectural authority layer for AI systems.
-            </p>
-            <a class="btn btn-secondary" href="authority-before-execution/">Read the Article</a>
-          </article>
-
-          <article class="card paper-card">
-            <div class="kicker">Architecture Page</div>
-            <h3>Architecture Overview</h3>
-            <div class="meta">Existing preserved path</div>
-            <p class="summary">
-              A visual and structural explanation of how Certor fits above AI models, tools, and execution.
-            </p>
-            <a class="btn btn-secondary" href="authority-before-execution/architecture.html">Open Architecture</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">MVP / Demo</h2>
-        <p class="section-sub">
-          The Certor MVP demonstrates a live authority-gated flow:
-          request intake, authorization decision, and execution only after explicit approval.
-        </p>
-
-        <div class="grid-2">
-          <div class="card">
-            <h3>What it proves</h3>
-            <p>That authority can sit outside the model and still govern execution in real time.</p>
-          </div>
-          <div class="card">
-            <h3>Execution boundary</h3>
-            <p>The proof is not in prompt wording. It is at the moment execution would otherwise occur.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">About Certor™</h2>
-        <p class="section-sub">
-          Certor develops architecture for authority-controlled AI execution,
-          built around the principle that authorization must precede action.
-        </p>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div>
-        <strong>Certor Technologies Ltd.</strong><br />
-        Certor™ — Authority Before Execution
-      </div>
-      <div>© Certor Technologies Ltd. All rights reserved.</div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script src="assets/js/site.js"></script>
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">The Missing Layer</h2>
+    <p class="section-sub">
+      AI systems today optimize models, memory, and tools —
+      but lack a true authority layer before execution.
+    </p>
+
+    <div class="grid-3">
+      <div class="card">
+        <h3>Memory ≠ Authority</h3>
+        <p>Memory improves context, not permission.</p>
+      </div>
+
+      <div class="card">
+        <h3>Models ≠ Control</h3>
+        <p>Model output should not define execution rights.</p>
+      </div>
+
+      <div class="card">
+        <h3>Execution Needs Authority</h3>
+        <p>Certor separates decision from action.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Certor Research Line</h2>
+
+    <div class="grid-3">
+
+      <div class="card">
+        <div class="kicker">Concept</div>
+        <h3>Authority Before Execution</h3>
+        <p>Defines the missing authority layer in AI systems.</p>
+        <div class="spacer-24"></div>
+        <a class="btn btn-secondary" href="authority-before-execution/">Open</a>
+      </div>
+
+      <div class="card">
+        <div class="kicker">Architecture</div>
+        <h3>System Structure</h3>
+        <p>Explains how Certor integrates above execution.</p>
+        <div class="spacer-24"></div>
+        <a class="btn btn-secondary" href="authority-before-execution/architecture.html">Open</a>
+      </div>
+
+      <div class="card">
+        <div class="kicker">Proof</div>
+        <h3>MVP Demonstration</h3>
+        <p>Shows real authority-gated execution.</p>
+        <div class="spacer-24"></div>
+        <a class="btn btn-secondary" href="mvp/">Open</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">MVP Status</h2>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>Live System (In Progress)</h3>
+        <p>
+          Certor MVP is evolving into a real-time authority-gated system,
+          connecting decision logic to actual execution environments.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Execution Boundary</h3>
+        <p>
+          The core proof is enforced at the moment of execution —
+          not in prompts, not in explanations, but in action itself.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <strong>Certor Technologies Ltd.</strong><br />
+      Certor™ — Authority Before Execution
+    </div>
+    <div>© Certor Technologies Ltd. All rights reserved.</div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+
 </body>
 </html>
