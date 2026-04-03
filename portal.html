@@ -3,187 +3,92 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Certor™ Portal | Independent Authorization Layer for AI</title>
+  <title>Certor™ | Authorization Layer for AI</title>
   <meta name="description" content="Certor™ is an independent authorization layer for AI systems, positioned before execution." />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
 
+<!-- HEADER -->
 <header class="site-header">
   <div class="container nav">
-    <a class="brand" href="portal.html">
-      <img class="brand-logo" src="authority-before-execution/certor-logo.png" alt="Certor logo" />
-      <div class="brand-text">
-        <span>Certor™</span>
-        <small>Independent Authorization Layer for AI</small>
-      </div>
+
+    <!-- LOGO -->
+    <a href="portal.html">
+      <img 
+        src="authority-before-execution/certor-logo.png" 
+        alt="Certor logo"
+        style="height:42px; width:auto;"
+      />
     </a>
 
-    <button class="nav-toggle" data-nav-toggle>Menu</button>
-
-    <nav class="nav-links" data-nav-menu>
+    <!-- NAV -->
+    <nav class="nav-links">
       <a class="active" href="portal.html">Portal</a>
-      <a href="papers.html">Papers</a>
-      <a href="mvp.html">MVP / Demo</a>
+      <a href="papers.html">Research</a>
+      <a href="mvp.html">MVP</a>
       <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
     </nav>
+
   </div>
 </header>
 
+<!-- MAIN -->
 <main>
 
 <section class="hero">
   <div class="container hero-grid">
+
     <div>
-      <div class="eyebrow">Architecture • Governance • Execution Control</div>
+      <div class="eyebrow">Execution Control Architecture</div>
 
       <h1>Authorization before execution.</h1>
 
       <p>
-        Certor™ introduces an independent authorization layer for AI systems,
-        positioned before execution and designed to determine whether an action
-        is permitted to proceed.
+        Certor™ defines an independent authorization layer for AI systems,
+        determining whether execution is allowed before actions occur.
       </p>
 
       <div class="hero-actions">
-        <a class="btn btn-primary" href="authority-before-execution/">Read Foundational Paper</a>
-        <a class="btn btn-secondary" href="papers.html">Review Research</a>
-      </div>
-
-      <div class="hero-badges">
-        <div class="badge">Independent Authorization</div>
-        <div class="badge">Permit / Block / Defer</div>
-        <div class="badge">Model-Agnostic Architecture</div>
+        <a class="btn btn-primary" href="authority-before-execution/">Read Paper</a>
+        <a class="btn btn-secondary" href="papers.html">Research</a>
       </div>
     </div>
 
     <div class="panel">
-      <div class="kicker">Architecture Overview</div>
       <img
         src="authority-before-execution/certor-authority-gate2.jpg"
-        alt="Certor authority architecture"
-        style="width:100%; border-radius:14px; border:1px solid rgba(255,255,255,.08);"
+        alt="Certor architecture"
+        style="width:100%; border-radius:12px;"
       />
     </div>
+
   </div>
 </section>
 
 <section class="section">
   <div class="container">
     <h2 class="section-title">Architectural Position</h2>
+
     <p class="section-sub">
-      Contemporary AI stacks optimize model capability, memory, retrieval, and tool use.
-      Certor™ addresses a different layer: whether execution should be authorized at all.
+      Certor™ introduces a control layer focused on authorization at the execution boundary,
+      independent from model output and application logic.
     </p>
-
-    <div class="grid-3">
-      <div class="card">
-        <h3>Independent Layer</h3>
-        <p>
-          Certor is positioned outside the model as a separate authorization boundary,
-          not as an instruction embedded in model behavior.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Execution Control</h3>
-        <p>
-          The architecture focuses on the execution layer, where actions are permitted,
-          deferred, or blocked before downstream activity occurs.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Model-Agnostic Design</h3>
-        <p>
-          The design is intended to remain portable across models, agents,
-          adapters, and operational environments.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <h2 class="section-title">Research Line</h2>
-    <p class="section-sub">
-      Certor™ is presented through a structured progression:
-      foundational concept, architectural framing, and execution-layer validation.
-    </p>
-
-    <div class="grid-3">
-      <div class="card">
-        <div class="kicker">Foundational Concept</div>
-        <h3>Authority Before Execution</h3>
-        <p>
-          The primary paper defining the authorization problem and positioning
-          Certor as a control layer before execution.
-        </p>
-        <div class="spacer-24"></div>
-        <a class="btn btn-secondary" href="authority-before-execution/">Open Paper</a>
-      </div>
-
-      <div class="card">
-        <div class="kicker">Architecture</div>
-        <h3>System Structure</h3>
-        <p>
-          A structural view of how Certor integrates above models, tools,
-          and execution pathways as a governing layer.
-        </p>
-        <div class="spacer-24"></div>
-        <a class="btn btn-secondary" href="authority-before-execution/architecture.html">Open Architecture</a>
-      </div>
-
-      <div class="card">
-        <div class="kicker">Validation</div>
-        <h3>MVP Demonstration</h3>
-        <p>
-          The MVP layer demonstrates authorization logic at the execution boundary,
-          including permit-bound action flow.
-        </p>
-        <div class="spacer-24"></div>
-        <a class="btn btn-secondary" href="mvp/">Review MVP Paper</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <h2 class="section-title">Development Status</h2>
-    <p class="section-sub">
-      Certor™ is being developed as a real authorization architecture for AI execution,
-      with emphasis on structural control, traceability, and execution-bound enforcement.
-    </p>
-
-    <div class="grid-2">
-      <div class="card">
-        <h3>Current Direction</h3>
-        <p>
-          The active development path focuses on authority-gated execution,
-          model-independent enforcement, and operational validation through MVP infrastructure.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Intellectual Property</h3>
-        <p>
-          Certor™ and its underlying architecture are part of an evolving intellectual
-          property and patent development process. Related intellectual property is owned by Daniel Alon.
-        </p>
-      </div>
-    </div>
   </div>
 </section>
 
 </main>
 
+<!-- FOOTER -->
 <footer class="footer">
   <div class="container footer-grid">
-    <div class="footer-company">Certor Technologies Ltd.</div>
-    <div>© Certor Technologies Ltd. All rights reserved.</div>
+
+    <!-- צד שמאל -->
+    <div>Certor Technologies Ltd.</div>
+
+    <!-- צד ימין -->
+    <div>© 2026</div>
+
   </div>
 </footer>
 
