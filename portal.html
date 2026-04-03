@@ -35,19 +35,19 @@
       <h1>Authorization before execution.</h1>
 
       <p>
-        Certor™ defines an independent authorization layer for AI systems,
-        determining whether execution is allowed before actions occur.
+        Certor™ introduces an independent authorization layer for AI systems,
+        designed to determine whether execution is permitted before actions occur.
       </p>
 
       <div class="hero-actions">
-        <a class="btn btn-primary" href="authority-before-execution/">Read Paper</a>
-        <a class="btn btn-secondary" href="papers.html">Research</a>
+        <a class="btn btn-primary" href="authority-before-execution/">Read Foundational Paper</a>
+        <a class="btn btn-secondary" href="papers.html">Review Research</a>
       </div>
     </div>
 
     <div class="panel fade-in fade-delay-2">
       <div class="hero-visual">
-        <img src="gate.jpg" alt="Certor hero gate visual" />
+        <img src="gate.jpg" alt="Certor hero visual" />
       </div>
     </div>
 
@@ -56,39 +56,72 @@
 
 <section class="section fade-in fade-delay-2">
   <div class="container">
-    <h2 class="section-title">Architecture</h2>
-
+    <h2 class="section-title">Position</h2>
     <p class="section-sub">
-      Certor™ is positioned as a layer above models and agents,
-      enforcing authorization before execution.
+      Certor™ is not a model layer and not an orchestration layer.
+      It is an authorization layer positioned at the execution boundary.
     </p>
+
+    <div class="grid-3">
+      <div class="card">
+        <h3>Independent</h3>
+        <p>
+          Authorization is handled outside the model rather than embedded inside model behavior.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Execution-Bound</h3>
+        <p>
+          The decision is applied where actions would otherwise proceed across tools, agents, or workflows.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Model-Agnostic</h3>
+        <p>
+          The architecture is intended to remain portable across models, connectors, and runtime environments.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section fade-in fade-delay-2">
+  <div class="container hero-grid">
+
+    <div>
+      <h2 class="section-title">Architecture</h2>
+      <p class="section-sub">
+        The Certor stack positions authorization above model-driven action,
+        separating generation from execution rights.
+      </p>
+      <a class="btn btn-secondary" href="authority-before-execution/architecture.html">Open Architecture</a>
+    </div>
 
     <div class="image-block">
       <img src="stack.jpg" alt="Certor architecture stack" />
     </div>
 
-    <div class="image-caption">
-      Structural view of the Certor authorization layer within the broader AI execution stack.
-    </div>
   </div>
 </section>
 
 <section class="section fade-in fade-delay-3">
-  <div class="container">
-    <h2 class="section-title">Execution Layer Validation</h2>
-
-    <p class="section-sub">
-      The MVP demonstrates real-time authorization at the execution boundary,
-      including action logging and permit-based control flow.
-    </p>
+  <div class="container hero-grid">
 
     <div class="image-block">
       <img src="mvp.jpg" alt="Certor MVP live authorization visual" />
     </div>
 
-    <div class="image-caption">
-      MVP visual illustrating permit-bound orchestration across agents, models, and tools.
+    <div>
+      <h2 class="section-title">MVP Validation</h2>
+      <p class="section-sub">
+        The MVP demonstrates real-time authorization logic at the execution layer,
+        including permit-bound flow and action-level outcomes.
+      </p>
+      <a class="btn btn-secondary" href="mvp/">Review MVP Paper</a>
     </div>
+
   </div>
 </section>
 
@@ -97,7 +130,7 @@
 <footer class="footer">
   <div class="container footer-grid">
     <div>Certor Technologies Ltd.</div>
-    <div>© 2025 Daniel Alon</div>
+    <div>© 2026 Daniel Alon</div>
   </div>
 </footer>
 
