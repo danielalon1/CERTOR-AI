@@ -51,10 +51,17 @@ img{
   backdrop-filter:blur(14px);
   background:rgba(6,16,24,.78);
   border-bottom:1px solid var(--line);
+  transition:background .25s ease, border-color .25s ease, backdrop-filter .25s ease;
+}
+
+.site-header.scrolled{
+  background:rgba(6,16,24,.92);
+  border-bottom:1px solid rgba(255,255,255,.12);
+  backdrop-filter:blur(18px);
 }
 
 .nav{
-  min-height:74px;
+  min-height:70px;
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -62,18 +69,22 @@ img{
 }
 
 .nav-logo{
-  height:34px;
+  height:24px;
   width:auto;
   display:block;
-  filter:drop-shadow(0 0 10px rgba(120,140,255,.08));
-  transition:transform .22s ease, filter .22s ease, opacity .22s ease;
-  opacity:.96;
+  opacity:.9;
+  filter:grayscale(10%) brightness(.96);
+  transition:height .25s ease, opacity .2s ease, filter .2s ease, transform .2s ease;
+}
+
+.site-header.scrolled .nav-logo{
+  height:21px;
 }
 
 .nav-logo:hover{
-  transform:translateY(-1px);
-  filter:drop-shadow(0 0 14px rgba(120,140,255,.14));
   opacity:1;
+  filter:none;
+  transform:translateY(-1px);
 }
 
 .nav-links{
@@ -99,7 +110,7 @@ img{
 
 /* HERO */
 .hero{
-  padding:84px 0 42px;
+  padding:82px 0 42px;
 }
 
 .hero-grid{
@@ -190,6 +201,13 @@ img{
   overflow:hidden;
   border:1px solid rgba(255,255,255,.08);
   box-shadow:0 14px 34px rgba(0,0,0,.22);
+  transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+.hero-visual:hover{
+  transform:translateY(-2px);
+  border-color:rgba(255,255,255,.14);
+  box-shadow:0 18px 42px rgba(0,0,0,.30);
 }
 
 .hero-visual img{
@@ -245,6 +263,13 @@ img{
   overflow:hidden;
   border:1px solid rgba(255,255,255,.08);
   box-shadow:var(--shadow);
+  transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+.image-block:hover{
+  transform:translateY(-2px);
+  border-color:rgba(255,255,255,.14);
+  box-shadow:0 20px 44px rgba(0,0,0,.30);
 }
 
 .image-block img{
@@ -293,15 +318,19 @@ img{
 /* MOBILE */
 @media (max-width: 920px){
   .nav{
-    min-height:68px;
+    min-height:64px;
   }
 
   .nav-logo{
-    height:30px;
+    height:22px;
+  }
+
+  .site-header.scrolled .nav-logo{
+    height:20px;
   }
 
   .hero{
-    padding:68px 0 28px;
+    padding:64px 0 28px;
   }
 
   .hero-grid,
