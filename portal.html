@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<header class="site-header">
+<header class="site-header" id="siteHeader">
   <div class="container nav">
     <a href="portal.html">
       <img src="certor-logo.png" alt="Certor logo" class="nav-logo" />
@@ -133,6 +133,17 @@
     <div>© 2026 Daniel Alon</div>
   </div>
 </footer>
+
+<script>
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 24) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+</script>
 
 </body>
 </html>
