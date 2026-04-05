@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Certor™ Demo</title>
-  <meta name="description" content="Live demonstration page for the Certor™ authorization layer." />
+  <title>Certor™ Live Demo</title>
+  <meta name="description" content="Live demonstration page for the Certor™ authorization layer for AI systems." />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
@@ -31,10 +31,10 @@
   <div class="container hero-grid">
     <div class="fade-in fade-delay-1">
       <div class="eyebrow">Live Demonstration</div>
-      <h1>Authorization at the point of execution.</h1>
+      <h1>Authorization at the execution boundary.</h1>
       <p>
-        This page is intended as the operational entry point for the Certor™ live demonstration:
-        showing how authorization is applied before execution is allowed to proceed.
+        The Certor™ live demonstration is intended to show how authorization
+        is applied before downstream execution is allowed to proceed.
       </p>
 
       <div class="hero-actions">
@@ -45,7 +45,7 @@
 
     <div class="panel fade-in fade-delay-2">
       <div class="hero-visual">
-        <img src="mvp.png" alt="Certor live demo visual" />
+        <img src="mvp.png" alt="Certor demo visual" />
       </div>
     </div>
   </div>
@@ -53,27 +53,58 @@
 
 <section class="section fade-in fade-delay-2">
   <div class="container">
-    <h2 class="section-title">What the Demo Is Meant to Show</h2>
+    <h2 class="section-title">What the Demo Is Intended to Show</h2>
     <p class="section-sub">
       The demonstration is not centered on model output alone.
-      It is centered on the control decision that precedes downstream execution.
+      It is centered on the authorization decision that precedes downstream action.
     </p>
 
     <div class="grid-3">
       <div class="card">
         <h3>Request Intake</h3>
-        <p>A request enters the flow and is evaluated before execution rights are granted.</p>
+        <p>
+          A request enters the flow and is evaluated before execution rights are granted.
+        </p>
       </div>
 
       <div class="card">
         <h3>Authorization Decision</h3>
-        <p>The system returns a decision such as permit, defer, or block at the execution boundary.</p>
+        <p>
+          The system returns a decision such as permit, defer, or block at the action boundary.
+        </p>
       </div>
 
       <div class="card">
         <h3>Controlled Outcome</h3>
-        <p>Downstream action proceeds only when the authorization condition is satisfied.</p>
+        <p>
+          Downstream execution proceeds only when the authorization condition is satisfied.
+        </p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="section fade-in fade-delay-3">
+  <div class="container grid-2">
+    <div class="card">
+      <h3>Current Demo Endpoint</h3>
+      <p>
+        The current button is configured to open:
+      </p>
+      <p>
+        <strong>http://127.0.0.1:8100</strong>
+      </p>
+      <p>
+        Replace this address with the actual server endpoint you want to expose from the site.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Deployment Note</h3>
+      <p>
+        If the demo remains internal, this page can stay as a controlled entry point.
+        If you later expose the server behind a public domain or gateway, only the button URL needs to be updated.
+      </p>
     </div>
   </div>
 </section>
@@ -81,11 +112,19 @@
 <section class="section fade-in fade-delay-3">
   <div class="container">
     <div class="card">
-      <h3>Demo Note</h3>
+      <h3>Position in the Research Line</h3>
       <p>
-        Replace the current demo link with the actual public or internal demo endpoint you want the site to open.
-        If you later expose the server behind a proper domain, update only the button URL above.
+        The live demonstration should be read as an operational extension of the MVP validation layer:
+        connecting the architectural claim to an actual execution environment.
       </p>
+
+      <div class="spacer-24"></div>
+
+      <div class="list-links">
+        <a class="btn btn-secondary" href="authority-before-execution/">Concept</a>
+        <a class="btn btn-secondary" href="authority-before-execution/architecture.html">Architecture</a>
+        <a class="btn btn-secondary" href="mvp.html">MVP</a>
+      </div>
     </div>
   </div>
 </section>
