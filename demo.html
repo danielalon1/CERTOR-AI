@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Certor™ Demo</title>
+  <meta name="description" content="Live demonstration page for the Certor™ authorization layer." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="container nav">
+    <a href="portal.html">
+      <img src="certor-logo.png" alt="Certor logo" class="nav-logo" />
+    </a>
+
+    <nav class="nav-links">
+      <a href="portal.html">Portal</a>
+      <a href="papers.html">Research</a>
+      <a href="mvp.html">MVP</a>
+      <a href="signals.html">Signals</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero fade-in">
+  <div class="container hero-grid">
+    <div class="fade-in fade-delay-1">
+      <div class="eyebrow">Live Demonstration</div>
+      <h1>Authorization at the point of execution.</h1>
+      <p>
+        This page is intended as the operational entry point for the Certor™ live demonstration:
+        showing how authorization is applied before execution is allowed to proceed.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="http://127.0.0.1:8100" target="_blank" rel="noopener noreferrer">Open Live Demo</a>
+        <a class="btn btn-secondary" href="mvp.html">Read MVP Context</a>
+      </div>
+    </div>
+
+    <div class="panel fade-in fade-delay-2">
+      <div class="hero-visual">
+        <img src="mvp.png" alt="Certor live demo visual" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section fade-in fade-delay-2">
+  <div class="container">
+    <h2 class="section-title">What the Demo Is Meant to Show</h2>
+    <p class="section-sub">
+      The demonstration is not centered on model output alone.
+      It is centered on the control decision that precedes downstream execution.
+    </p>
+
+    <div class="grid-3">
+      <div class="card">
+        <h3>Request Intake</h3>
+        <p>A request enters the flow and is evaluated before execution rights are granted.</p>
+      </div>
+
+      <div class="card">
+        <h3>Authorization Decision</h3>
+        <p>The system returns a decision such as permit, defer, or block at the execution boundary.</p>
+      </div>
+
+      <div class="card">
+        <h3>Controlled Outcome</h3>
+        <p>Downstream action proceeds only when the authorization condition is satisfied.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section fade-in fade-delay-3">
+  <div class="container">
+    <div class="card">
+      <h3>Demo Note</h3>
+      <p>
+        Replace the current demo link with the actual public or internal demo endpoint you want the site to open.
+        If you later expose the server behind a proper domain, update only the button URL above.
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>Certor Technologies Ltd.</div>
+    <div>© 2026 Daniel Alon</div>
+  </div>
+</footer>
+
+<script>
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 24) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  });
+</script>
+
+</body>
+</html>
