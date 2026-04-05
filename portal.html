@@ -27,46 +27,45 @@
 <main>
 
 <section class="hero fade-in">
-  <div class="container">
-    <div class="hero-grid">
-
-      <div class="fade-in fade-delay-1">
-        <div class="eyebrow">Independent Authorization Architecture</div>
-
-        <h1>Authorization before execution.</h1>
-
-        <p>
-          Certor™ introduces an independent authorization layer for AI systems,
-          designed to determine whether execution is permitted before actions occur.
-        </p>
-
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="authority-before-execution/">Read Foundational Paper</a>
-          <a class="btn btn-secondary" href="papers.html">Review Research</a>
-        </div>
+  <div class="container hero-grid">
+    <div class="fade-in fade-delay-1">
+      <div class="eyebrow">Independent Authorization Architecture</div>
+      <h1>Authorization before execution.</h1>
+      <p>
+        Certor™ introduces an independent authorization layer for AI systems,
+        designed to determine whether execution is permitted before actions occur.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="papers.html">Research</a>
+        <a class="btn btn-secondary" href="demo.html">Live Demo</a>
       </div>
-
-      <div class="panel fade-in fade-delay-2">
-        <div class="hero-visual">
-          <img src="gate.png" alt="Certor hero visual" />
-        </div>
-      </div>
-
     </div>
 
-    <div class="spacer-24"></div>
+    <div class="panel fade-in fade-delay-2">
+      <div class="hero-visual">
+        <img src="gate.png" alt="Certor hero visual" />
+      </div>
+    </div>
+  </div>
+</section>
 
-    <div class="grid-3 fade-in fade-delay-3">
+<section class="section fade-in fade-delay-2">
+  <div class="container">
+    <h2 class="section-title">Position</h2>
+    <p class="section-sub">
+      Certor™ is not a model layer and not an orchestration layer.
+      It is an authorization layer positioned at the execution boundary between intent and action.
+    </p>
+
+    <div class="grid-3">
       <div class="card">
         <h3>Independent</h3>
         <p>Authorization is handled outside the model rather than embedded inside generation logic.</p>
       </div>
-
       <div class="card">
         <h3>Execution-Bound</h3>
         <p>The decision is applied where actions would otherwise proceed across agents, tools, or workflows.</p>
       </div>
-
       <div class="card">
         <h3>Model-Agnostic</h3>
         <p>The architecture is intended to remain portable across models, connectors, and runtime environments.</p>
@@ -75,74 +74,26 @@
   </div>
 </section>
 
-<section class="section fade-in fade-delay-2">
-  <div class="container">
-    <h2 class="section-title">Architectural Position</h2>
-    <p class="section-sub">
-      Certor™ is not a model layer and not an orchestration layer.
-      It is an authorization layer positioned at the execution boundary between intent and action.
-    </p>
-  </div>
-</section>
-
-<section class="section fade-in fade-delay-2">
-  <div class="container">
-    <div class="hero-grid">
-
-      <div>
-        <h2 class="section-title">Architecture</h2>
-        <p class="section-sub">
-          The Certor stack positions authorization above model-driven action,
-          separating generation from execution rights and introducing a distinct control layer.
-        </p>
-        <a class="btn btn-secondary" href="authority-before-execution/architecture.html">Open Architecture</a>
-      </div>
-
-      <div class="image-block">
-        <img src="stack.png" alt="Certor architecture stack" />
-      </div>
-
-    </div>
-  </div>
-</section>
-
 <section class="section fade-in fade-delay-3">
-  <div class="container">
-    <div class="hero-grid">
-
-      <div class="image-block">
-        <img src="mvp.png" alt="Certor MVP visual" />
-      </div>
-
-      <div>
-        <h2 class="section-title">Execution Layer Validation</h2>
-        <p class="section-sub">
-          The MVP demonstrates real-time authorization logic at the execution layer,
-          including permit-based control, action validation, and visible downstream outcomes.
-        </p>
-        <a class="btn btn-secondary" href="mvp/">Review MVP</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section class="section fade-in fade-delay-3">
-  <div class="container">
+  <div class="container grid-2">
     <div class="card">
       <h3>Research Line</h3>
       <p>
         Certor™ is presented through a structured progression:
-        foundational concept, architectural framing, and execution-layer validation.
+        concept, architecture, and execution-layer validation.
       </p>
-
       <div class="spacer-24"></div>
+      <a class="btn btn-secondary" href="papers.html">Open Research</a>
+    </div>
 
-      <div class="hero-actions">
-        <a class="btn btn-secondary" href="authority-before-execution/">Concept</a>
-        <a class="btn btn-secondary" href="authority-before-execution/architecture.html">Architecture</a>
-        <a class="btn btn-secondary" href="mvp/">MVP</a>
-      </div>
+    <div class="card">
+      <h3>Market Relevance</h3>
+      <p>
+        The need for authorization before execution is increasingly visible across AI deployments,
+        governance discussions, and operational control gaps.
+      </p>
+      <div class="spacer-24"></div>
+      <a class="btn btn-secondary" href="signals.html">View Market Signals</a>
     </div>
   </div>
 </section>
@@ -152,18 +103,15 @@
 <footer class="footer">
   <div class="container footer-grid">
     <div>Certor Technologies Ltd.</div>
-    <div>© 2025 Daniel Alon</div>
+    <div>© 2026 Daniel Alon</div>
   </div>
 </footer>
 
 <script>
   const header = document.getElementById('siteHeader');
   window.addEventListener('scroll', function () {
-    if (window.scrollY > 24) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
+    if (window.scrollY > 24) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
   });
 </script>
 
