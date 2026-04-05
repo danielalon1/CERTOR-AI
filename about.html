@@ -28,135 +28,53 @@
 
 <section class="hero fade-in">
   <div class="container">
-    <div class="hero-grid">
-
-      <div class="fade-in fade-delay-1">
-        <div class="eyebrow">About Certor™</div>
-
-        <h1>An authorization architecture for AI execution.</h1>
-
-        <p>
-          Certor™ is an architecture initiative focused on authorization at the execution layer of AI systems.
-          Its central premise is that execution should be subject to an independent authorization boundary,
-          rather than relying solely on model output or application logic.
-        </p>
-      </div>
-
-      <div class="panel fade-in fade-delay-2">
-        <div class="hero-visual">
-          <img src="certor-logo.png" alt="Certor brand visual" />
-        </div>
-      </div>
-
+    <div class="fade-in fade-delay-1">
+      <div class="eyebrow">About Certor™</div>
+      <h1>An authorization architecture for AI execution.</h1>
+      <p>
+        Certor™ is an architecture initiative focused on authorization at the execution layer of AI systems.
+        Its central premise is that execution should be subject to an independent authorization boundary,
+        rather than relying solely on model output or application logic.
+      </p>
     </div>
   </div>
 </section>
 
 <section class="section fade-in fade-delay-2">
   <div class="container">
-    <h2 class="section-title">Architectural Premise</h2>
-    <p class="section-sub">
-      Certor™ is built around a structural distinction between generation and authorization:
-      models may generate outputs, but execution requires an additional, independent decision layer.
-    </p>
-
     <div class="grid-3">
       <div class="card">
-        <h3>Separate Layer</h3>
-        <p>
-          Certor is designed as a distinct layer positioned before execution,
-          rather than as an instruction embedded inside model behavior.
-        </p>
+        <h3>Architectural Focus</h3>
+        <p>Certor is designed as a distinct layer positioned before execution rather than embedded within model behavior.</p>
       </div>
-
       <div class="card">
-        <h3>Execution Focus</h3>
-        <p>
-          The architecture focuses on whether requested actions should proceed,
-          be deferred, or be blocked at the execution boundary.
-        </p>
+        <h3>Design Principle</h3>
+        <p>Models may generate outputs, but execution requires an additional, independent decision layer.</p>
       </div>
-
       <div class="card">
-        <h3>Portable Design</h3>
-        <p>
-          The design direction is model-agnostic and intended for deployment across varied
-          agent, tool, and runtime environments.
-        </p>
+        <h3>Operational Direction</h3>
+        <p>Development is oriented toward real authorization workflows, execution-bound control, and traceable decisions.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="section fade-in fade-delay-2">
-  <div class="container">
-    <div class="hero-grid">
-
-      <div>
-        <h2 class="section-title">Research Direction</h2>
-        <p class="section-sub">
-          The Certor research line progresses through three layers:
-          foundational framing of the authorization problem,
-          architectural specification of the control layer,
-          and MVP-level validation at the execution boundary.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Research Line</h3>
-        <p>
-          Concept → Architecture → Validation
-        </p>
-
-        <div class="spacer-24"></div>
-
-        <div class="hero-actions">
-          <a class="btn btn-secondary" href="authority-before-execution/">Concept</a>
-          <a class="btn btn-secondary" href="authority-before-execution/architecture.html">Architecture</a>
-          <a class="btn btn-secondary" href="mvp/">MVP</a>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
 
 <section class="section fade-in fade-delay-3">
-  <div class="container">
-    <div class="hero-grid">
-
-      <div>
-        <h2 class="section-title">Operational Direction</h2>
-        <p class="section-sub">
-          Development is oriented toward real authorization workflows,
-          execution-bound control, traceable decision paths,
-          and model-agnostic deployment options.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Current Orientation</h3>
-        <p>
-          The active path emphasizes authority-gated execution, permit-based action control,
-          and operational validation through MVP infrastructure.
-        </p>
-      </div>
-
+  <div class="container grid-2">
+    <div class="card">
+      <h3>Research Direction</h3>
+      <p>
+        The Certor research line progresses through three layers:
+        foundational framing of the authorization problem, architectural specification,
+        and MVP-level validation at the execution boundary.
+      </p>
     </div>
-  </div>
-</section>
 
-<section class="section fade-in fade-delay-3">
-  <div class="container">
     <div class="card">
       <h3>Intellectual Property</h3>
       <p>
-        Certor™ and its underlying architectural concepts are part of an ongoing
-        intellectual property and patent development process.
-      </p>
-      <p>
-        Related intellectual property is owned by Daniel Alon,
-        originator of the Certor architecture and the “Authority Before Execution” model.
+        Certor™ and its underlying architectural concepts are part of an ongoing intellectual property
+        and patent development process. Related intellectual property is owned by Daniel Alon.
       </p>
     </div>
   </div>
@@ -174,11 +92,8 @@
 <script>
   const header = document.getElementById('siteHeader');
   window.addEventListener('scroll', function () {
-    if (window.scrollY > 24) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
+    if (window.scrollY > 24) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
   });
 </script>
 
