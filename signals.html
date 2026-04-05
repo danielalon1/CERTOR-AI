@@ -31,79 +31,69 @@
 </header>
 
 <main>
-<section class="hero fade-in">
+
+<section class="hero">
   <div class="container hero-grid">
-    <div class="fade-in fade-delay-1">
+    <div>
       <div class="eyebrow">Market Signals</div>
       <h1>Why this layer is needed now.</h1>
       <p>
-        The market is already signaling a clear need for stronger controls over AI execution,
-        agent autonomy, tool use, operational trust, and governance at the point where actions occur.
+        The industry is already showing clear signals that execution-level
+        control is becoming critical for AI systems.
       </p>
     </div>
 
-    <div class="panel fade-in fade-delay-2">
+    <div class="panel">
       <div class="hero-visual">
-        <img src="signals.png" alt="Certor market signals visual" />
+        <img src="signals.png" alt="Signals visual" />
       </div>
     </div>
   </div>
 </section>
 
-<section class="section fade-in fade-delay-2">
-  <div class="container">
-    <h2 class="section-title">Observed Signals</h2>
-    <p class="section-sub">
-      The examples below show that the industry is already encountering the category of problem
-      that an authorization layer is designed to address.
-    </p>
+<section class="section">
+  <div class="container grid-2">
 
-    <div class="grid-2">
-      <div class="card">
-        <h3>Anthropic — Computer Use Risk Signal</h3>
-        <p>Anthropic describes computer use as a beta capability with heightened risks, especially when interacting with the internet.</p>
-      </div>
-
-      <div class="card">
-        <h3>Anthropic — Agentic Misalignment Signal</h3>
-        <p>Anthropic research highlights cases where models’ intentional actions can become a source of harm.</p>
-      </div>
-
-      <div class="card">
-        <h3>OpenAI — Operator Control Signal</h3>
-        <p>OpenAI describes user control at critical points as a core safety principle for action-taking systems.</p>
-      </div>
-
-      <div class="card">
-        <h3>OpenAI — Computer Use Security Signal</h3>
-        <p>OpenAI guidance recommends isolated environments and human oversight for high-impact actions.</p>
-      </div>
-
-      <div class="card">
-        <h3>OWASP — Agentic Application Risk Signal</h3>
-        <p>OWASP’s Top 10 for Agentic Applications identifies critical security risks for autonomous and agentic systems.</p>
-      </div>
-
-      <div class="card">
-        <h3>NIST — GenAI Risk Management Signal</h3>
-        <p>NIST’s generative AI profile points to the need for structured action in AI risk management.</p>
-      </div>
+    <div class="card">
+      <h3>Anthropic</h3>
+      <p>Highlights risks in agentic behavior and autonomous execution.</p>
     </div>
+
+    <div class="card">
+      <h3>OpenAI</h3>
+      <p>Emphasizes human control and safe execution boundaries.</p>
+    </div>
+
+    <div class="card">
+      <h3>OWASP</h3>
+      <p>Defines security risks in agent-based systems.</p>
+    </div>
+
+    <div class="card">
+      <h3>NIST</h3>
+      <p>Calls for structured risk management for AI systems.</p>
+    </div>
+
   </div>
 </section>
 
-<section class="section fade-in fade-delay-3">
+<!-- CONTACT -->
+<section class="section">
   <div class="container">
     <div class="card">
-      <h3>Positioning Note</h3>
+      <h3>Contact</h3>
       <p>
-        Certor™ should be read in this context:
-        not as a response to one single company or one single regulation,
-        but as an architectural response to a broad and increasing category of execution-control problems.
+        For research collaboration, partnerships, or institutional discussions:
+      </p>
+      <div class="spacer-24"></div>
+      <p>
+        <strong>Email:</strong>
+        <a href="mailto:contact@certor.ai">contact@certor.ai</a>
       </p>
     </div>
   </div>
 </section>
+
 </main>
 
 <footer class="footer">
@@ -114,11 +104,10 @@
 </footer>
 
 <script>
-  const header = document.getElementById('siteHeader');
-  window.addEventListener('scroll', function () {
-    if (window.scrollY > 24) header.classList.add('scrolled');
-    else header.classList.remove('scrolled');
-  });
+const header = document.getElementById('siteHeader');
+window.addEventListener('scroll', () => {
+  window.scrollY > 24 ? header.classList.add('scrolled') : header.classList.remove('scrolled');
+});
 </script>
 
 </body>
