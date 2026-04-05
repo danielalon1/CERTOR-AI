@@ -3,107 +3,201 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Certor™ Papers</title>
-  <meta name="description" content="Published papers and articles by Certor™." />
+  <title>Certor™ Research</title>
+  <meta name="description" content="Research and papers related to the Certor™ authorization architecture for AI systems." />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
 
-<header class="site-header">
+<header class="site-header" id="siteHeader">
   <div class="container nav">
-    <a class="brand" href="portal.html">
-      <div class="brand-mark">C</div>
-      <div class="brand-text">
-        <span>Certor™</span>
-        <small>Authority Before Execution</small>
-      </div>
+    <a href="portal.html">
+      <img src="certor-logo.png" alt="Certor logo" class="nav-logo" />
     </a>
 
-    <button class="nav-toggle" data-nav-toggle>Menu</button>
-
-    <nav class="nav-links" data-nav-menu>
+    <nav class="nav-links">
       <a href="portal.html">Portal</a>
-      <a class="active" href="papers.html">Papers</a>
-      <a href="mvp.html">MVP / Demo</a>
+      <a class="active" href="papers.html">Research</a>
+      <a href="mvp.html">MVP</a>
       <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
     </nav>
   </div>
 </header>
 
-<main class="section">
+<main>
+
+<section class="hero fade-in">
   <div class="container">
+    <div class="hero-grid">
 
-    <div class="eyebrow">Research & Articles</div>
-    <h1 class="section-title">Papers</h1>
+      <div class="fade-in fade-delay-1">
+        <div class="eyebrow">Research</div>
 
+        <h1>A structured research line for authorization in AI systems.</h1>
+
+        <p>
+          The Certor™ research line is organized as a progression from problem framing,
+          to architectural specification, to execution-layer validation.
+        </p>
+      </div>
+
+      <div class="panel fade-in fade-delay-2">
+        <div class="hero-visual">
+          <img src="stack.png" alt="Certor research architecture visual" />
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section fade-in fade-delay-2">
+  <div class="container">
+    <h2 class="section-title">Research Structure</h2>
     <p class="section-sub">
-      Certor™ research is structured around three layers:
-      concept, architecture, and proof.
+      The current material can be read as three connected layers:
+      concept, architecture, and validation.
     </p>
 
-    <div class="grid-2">
-
-      <!-- Article 1 -->
-      <article class="card paper-card">
-        <div class="kicker">Foundational Paper</div>
-        <h3>Authority Before Execution</h3>
-        <div class="meta">Original publication preserved</div>
-        <p class="summary">
-          The foundational concept introducing Certor™ as an architectural
-          authority layer positioned before execution in AI systems.
+    <div class="grid-3">
+      <div class="card">
+        <h3>Concept</h3>
+        <p>
+          Defines the authorization gap and introduces the principle of authority before execution.
         </p>
-        <a class="btn btn-secondary" href="authority-before-execution/">Read Article</a>
-      </article>
+      </div>
 
-      <!-- Architecture -->
-      <article class="card paper-card">
-        <div class="kicker">Architecture</div>
+      <div class="card">
+        <h3>Architecture</h3>
+        <p>
+          Specifies the structural placement of Certor as an authorization layer above execution.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Validation</h3>
+        <p>
+          Demonstrates MVP-level execution control through permit-based and decision-bound flow.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section fade-in fade-delay-2">
+  <div class="container">
+    <div class="hero-grid">
+
+      <div>
+        <h2 class="section-title">Foundational Concept</h2>
+        <p class="section-sub">
+          The foundational paper introduces the core problem:
+          current AI systems generate and act, but do not contain an independent authorization layer before execution.
+        </p>
+        <a class="btn btn-secondary" href="authority-before-execution/">Open Concept Paper</a>
+      </div>
+
+      <div class="card">
+        <h3>Authority Before Execution</h3>
+        <p>
+          The primary paper defining the missing authorization boundary in AI systems
+          and positioning Certor™ as a structural response.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section fade-in fade-delay-3">
+  <div class="container">
+    <div class="hero-grid">
+
+      <div class="card">
         <h3>Architecture Overview</h3>
-        <div class="meta">Existing architecture page</div>
-        <p class="summary">
-          Structural explanation of how Certor integrates above models,
-          tools, and execution layers.
+        <p>
+          A structural explanation of how Certor™ integrates above models, tools,
+          and downstream execution pathways as a governing layer.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="section-title">Architectural Framing</h2>
+        <p class="section-sub">
+          The architecture material expands the concept into a layered execution model,
+          clarifying how authorization is separated from generation and applied at the action boundary.
         </p>
         <a class="btn btn-secondary" href="authority-before-execution/architecture.html">Open Architecture</a>
-      </article>
-
-      <!-- MVP -->
-      <article class="card paper-card">
-        <div class="kicker">MVP Paper</div>
-        <h3>Certor MVP — Proof of Authority</h3>
-        <div class="meta">Execution-layer validation</div>
-        <p class="summary">
-          A working demonstration proving that execution can be controlled
-          through an external authority layer using the principle:
-          No Permit → No Execution.
-        </p>
-        <a class="btn btn-secondary" href="mvp/">Read MVP Paper</a>
-      </article>
+      </div>
 
     </div>
-
-    <div class="spacer-24"></div>
-
-    <div class="note">
-      This progression reflects the Certor™ research line:
-      Concept → Architecture → Proof (MVP).
-    </div>
-
   </div>
+</section>
+
+<section class="section fade-in fade-delay-3">
+  <div class="container">
+    <div class="hero-grid">
+
+      <div>
+        <h2 class="section-title">Execution-Layer Validation</h2>
+        <p class="section-sub">
+          The MVP material focuses on validation:
+          proving that authorization can be enforced in real time before execution proceeds.
+        </p>
+        <a class="btn btn-secondary" href="mvp/">Review MVP</a>
+      </div>
+
+      <div class="card">
+        <h3>MVP Demonstration</h3>
+        <p>
+          The validation layer demonstrates permit-based execution control,
+          visible action outcomes, and real-time authorization logic.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section fade-in fade-delay-3">
+  <div class="container">
+    <div class="card">
+      <h3>Reading Order</h3>
+      <p>
+        For first-time readers, the recommended order is:
+        foundational concept, architecture overview, then MVP validation.
+      </p>
+
+      <div class="spacer-24"></div>
+
+      <div class="hero-actions">
+        <a class="btn btn-secondary" href="authority-before-execution/">1. Concept</a>
+        <a class="btn btn-secondary" href="authority-before-execution/architecture.html">2. Architecture</a>
+        <a class="btn btn-secondary" href="mvp/">3. MVP</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 </main>
 
 <footer class="footer">
   <div class="container footer-grid">
-    <div>
-      <strong>Certor Technologies Ltd.</strong><br />
-      Certor™ — Authority Before Execution
-    </div>
-    <div>© Certor Technologies Ltd. All rights reserved.</div>
+    <div>Certor Technologies Ltd.</div>
+    <div>© 2026 Daniel Alon</div>
   </div>
 </footer>
 
-<script src="assets/js/site.js"></script>
+<script>
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 24) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+</script>
 
 </body>
 </html>
