@@ -27,111 +27,43 @@
 <main>
 
 <section class="hero fade-in">
-  <div class="container">
-    <div class="hero-grid">
-
-      <div class="fade-in fade-delay-1">
-        <div class="eyebrow">MVP Validation</div>
-
-        <h1>Execution-layer authorization in practice.</h1>
-
-        <p>
-          The Certor™ MVP is focused on validation at the execution boundary:
-          demonstrating that authorization logic can be applied in real time
-          before actions are allowed to proceed.
-        </p>
+  <div class="container hero-grid">
+    <div class="fade-in fade-delay-1">
+      <div class="eyebrow">MVP Validation</div>
+      <h1>Execution-layer authorization in practice.</h1>
+      <p>
+        The Certor™ MVP is focused on validation at the execution boundary:
+        demonstrating that authorization logic can be applied in real time before actions are allowed to proceed.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="demo.html">Open Demo</a>
+        <a class="btn btn-secondary" href="papers.html">Research</a>
       </div>
+    </div>
 
-      <div class="panel fade-in fade-delay-2">
-        <div class="hero-visual">
-          <img src="mvp.png" alt="Certor MVP visual" />
-        </div>
+    <div class="panel fade-in fade-delay-2">
+      <div class="hero-visual">
+        <img src="mvp.png" alt="Certor MVP visual" />
       </div>
-
     </div>
   </div>
 </section>
 
 <section class="section fade-in fade-delay-2">
   <div class="container">
-    <h2 class="section-title">Validation Focus</h2>
-    <p class="section-sub">
-      The MVP is not intended as a general product showcase.
-      Its role is to validate the architectural claim that authorization can sit
-      at the execution boundary as an independent control layer.
-    </p>
-
     <div class="grid-3">
       <div class="card">
         <h3>Permit-Based Flow</h3>
-        <p>
-          Execution is tied to an explicit authorization outcome rather than proceeding directly from model output.
-        </p>
+        <p>Execution is tied to an explicit authorization outcome rather than proceeding directly from model output.</p>
       </div>
-
       <div class="card">
         <h3>Execution-Bound Decision</h3>
-        <p>
-          The decision is applied at the moment of action, where downstream execution would otherwise occur.
-        </p>
+        <p>The decision is applied at the moment of action, where downstream execution would otherwise occur.</p>
       </div>
-
       <div class="card">
         <h3>Observable Outcomes</h3>
-        <p>
-          The MVP is structured to make authorization logic visible through downstream action behavior and control flow.
-        </p>
+        <p>The MVP is structured to make authorization logic visible through downstream action behavior and control flow.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="section fade-in fade-delay-2">
-  <div class="container">
-    <div class="hero-grid">
-
-      <div>
-        <h2 class="section-title">What the MVP Demonstrates</h2>
-        <p class="section-sub">
-          The validation layer demonstrates that authorization can be enforced in real time
-          before execution proceeds across connected systems, agents, or tools.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Core Validation Goal</h3>
-        <p>
-          To demonstrate that execution can remain conditional on a separate authorization layer,
-          rather than being triggered directly by model generation or application flow.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section class="section fade-in fade-delay-3">
-  <div class="container">
-    <div class="hero-grid">
-
-      <div class="image-block">
-        <img src="gate.png" alt="Certor authorization gate visual" />
-      </div>
-
-      <div>
-        <h2 class="section-title">Relation to the Broader Research Line</h2>
-        <p class="section-sub">
-          Within the Certor research line, the MVP serves as the validation layer:
-          following the concept paper and architecture framing with execution-level demonstration.
-        </p>
-
-        <div class="hero-actions">
-          <a class="btn btn-secondary" href="authority-before-execution/">Concept</a>
-          <a class="btn btn-secondary" href="authority-before-execution/architecture.html">Architecture</a>
-          <a class="btn btn-secondary" href="papers.html">Research Overview</a>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
@@ -160,11 +92,8 @@
 <script>
   const header = document.getElementById('siteHeader');
   window.addEventListener('scroll', function () {
-    if (window.scrollY > 24) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
+    if (window.scrollY > 24) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
   });
 </script>
 
