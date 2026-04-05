@@ -3,77 +3,170 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Certor™ MVP / Demo</title>
-  <meta name="description" content="Certor MVP and live authority-gated demo overview." />
+  <title>Certor™ MVP</title>
+  <meta name="description" content="MVP validation page for the Certor™ authorization layer for AI systems." />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="portal.html">
-        <div class="brand-mark">C</div>
-        <div class="brand-text">
-          <span>Certor™</span>
-          <small>Authority Before Execution</small>
-        </div>
-      </a>
-      <button class="nav-toggle" data-nav-toggle>Menu</button>
-      <nav class="nav-links" data-nav-menu>
-        <a href="portal.html">Portal</a>
-        <a href="papers.html">Papers</a>
-        <a class="active" href="mvp.html">MVP / Demo</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
 
-  <main class="section">
-    <div class="container">
-      <div class="eyebrow">MVP</div>
-      <h1 class="section-title">Live Authority-Gated Flow</h1>
-      <p class="section-sub">
-        The MVP is designed to demonstrate a strict execution boundary:
-        action proceeds only after explicit authorization.
-      </p>
+<header class="site-header" id="siteHeader">
+  <div class="container nav">
+    <a href="portal.html">
+      <img src="certor-logo.png" alt="Certor logo" class="nav-logo" />
+    </a>
+
+    <nav class="nav-links">
+      <a href="portal.html">Portal</a>
+      <a href="papers.html">Research</a>
+      <a class="active" href="mvp.html">MVP</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero fade-in">
+  <div class="container">
+    <div class="hero-grid">
+
+      <div class="fade-in fade-delay-1">
+        <div class="eyebrow">MVP Validation</div>
+
+        <h1>Execution-layer authorization in practice.</h1>
+
+        <p>
+          The Certor™ MVP is focused on validation at the execution boundary:
+          demonstrating that authorization logic can be applied in real time
+          before actions are allowed to proceed.
+        </p>
+      </div>
+
+      <div class="panel fade-in fade-delay-2">
+        <div class="hero-visual">
+          <img src="mvp.png" alt="Certor MVP visual" />
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section fade-in fade-delay-2">
+  <div class="container">
+    <h2 class="section-title">Validation Focus</h2>
+    <p class="section-sub">
+      The MVP is not intended as a general product showcase.
+      Its role is to validate the architectural claim that authorization can sit
+      at the execution boundary as an independent control layer.
+    </p>
+
+    <div class="grid-3">
+      <div class="card">
+        <h3>Permit-Based Flow</h3>
+        <p>
+          Execution is tied to an explicit authorization outcome rather than proceeding directly from model output.
+        </p>
+      </div>
 
       <div class="card">
-        <div class="diagram">Request
-↓
-Gate Intake
-↓
-Permit / Block / Defer
-↓
-Trace / Decision Record
-↓
-Execution (only if permitted)</div>
+        <h3>Execution-Bound Decision</h3>
+        <p>
+          The decision is applied at the moment of action, where downstream execution would otherwise occur.
+        </p>
       </div>
 
-      <div class="spacer-24"></div>
-
-      <div class="grid-2">
-        <div class="card">
-          <h3>What the MVP proves</h3>
-          <p>A real architectural separation between request and execution.</p>
-        </div>
-        <div class="card">
-          <h3>What comes next</h3>
-          <p>Live demo connection, adapter routing, and visible permit-bound execution paths.</p>
-        </div>
+      <div class="card">
+        <h3>Observable Outcomes</h3>
+        <p>
+          The MVP is structured to make authorization logic visible through downstream action behavior and control flow.
+        </p>
       </div>
     </div>
-  </main>
+  </div>
+</section>
 
-  <footer class="footer">
-    <div class="container footer-grid">
+<section class="section fade-in fade-delay-2">
+  <div class="container">
+    <div class="hero-grid">
+
       <div>
-        <strong>Certor Technologies Ltd.</strong><br />
-        Certor™ — Authority Before Execution
+        <h2 class="section-title">What the MVP Demonstrates</h2>
+        <p class="section-sub">
+          The validation layer demonstrates that authorization can be enforced in real time
+          before execution proceeds across connected systems, agents, or tools.
+        </p>
       </div>
-      <div>© Certor Technologies Ltd. All rights reserved.</div>
-    </div>
-  </footer>
 
-  <script src="assets/js/site.js"></script>
+      <div class="card">
+        <h3>Core Validation Goal</h3>
+        <p>
+          To demonstrate that execution can remain conditional on a separate authorization layer,
+          rather than being triggered directly by model generation or application flow.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section fade-in fade-delay-3">
+  <div class="container">
+    <div class="hero-grid">
+
+      <div class="image-block">
+        <img src="gate.png" alt="Certor authorization gate visual" />
+      </div>
+
+      <div>
+        <h2 class="section-title">Relation to the Broader Research Line</h2>
+        <p class="section-sub">
+          Within the Certor research line, the MVP serves as the validation layer:
+          following the concept paper and architecture framing with execution-level demonstration.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-secondary" href="authority-before-execution/">Concept</a>
+          <a class="btn btn-secondary" href="authority-before-execution/architecture.html">Architecture</a>
+          <a class="btn btn-secondary" href="papers.html">Research Overview</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section fade-in fade-delay-3">
+  <div class="container">
+    <div class="card">
+      <h3>MVP Position</h3>
+      <p>
+        The Certor™ MVP should be read as an execution-layer validation effort:
+        focused on proving a structural authorization model rather than presenting a conventional application interface.
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>Certor Technologies Ltd.</div>
+    <div>© 2026 Daniel Alon</div>
+  </div>
+</footer>
+
+<script>
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 24) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+</script>
+
 </body>
 </html>
