@@ -31,15 +31,17 @@
 </header>
 
 <main>
+
 <section class="hero fade-in">
   <div class="container hero-grid">
     <div class="fade-in fade-delay-1">
       <div class="eyebrow">Independent Authorization Architecture</div>
       <h1>Authorization before execution.</h1>
       <p>
-        Certor™ introduces an independent authorization layer for AI systems,
+        Certor™ defines an independent authorization layer for AI systems,
         designed to determine whether execution is permitted before actions occur.
       </p>
+
       <div class="hero-actions">
         <a class="btn btn-primary" href="papers.html">Research</a>
         <a class="btn btn-secondary" href="demo.html">Live Demo</a>
@@ -65,15 +67,54 @@
     <div class="grid-3">
       <div class="card">
         <h3>Independent</h3>
-        <p>Authorization is handled outside the model rather than embedded inside generation logic.</p>
+        <p>
+          Authorization is handled outside the model rather than embedded inside generation logic.
+        </p>
       </div>
+
       <div class="card">
         <h3>Execution-Bound</h3>
-        <p>The decision is applied where actions would otherwise proceed across agents, tools, or workflows.</p>
+        <p>
+          The decision is applied where actions would otherwise proceed across agents, tools, or workflows.
+        </p>
       </div>
+
       <div class="card">
         <h3>Model-Agnostic</h3>
-        <p>The architecture is intended to remain portable across models, connectors, and runtime environments.</p>
+        <p>
+          The architecture is intended to remain portable across models, connectors, and runtime environments.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section fade-in fade-delay-3">
+  <div class="container">
+    <h2 class="section-title">Why Certor Exists</h2>
+    <p class="section-sub">
+      The market signals collected in this site point to a common pattern:
+      AI systems are becoming more capable, more connected, and more operational —
+      but the layer that decides whether execution is allowed is still missing.
+    </p>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>What the signals show</h3>
+        <p>
+          The current AI landscape is already exposing repeated gaps:
+          memory is not enough, model choice is not enough, security is not enough,
+          and human supervision alone does not scale once systems begin to act inside real environments.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Where Certor fits</h3>
+        <p>
+          Certor fits above capability and before execution.
+          It introduces a distinct authorization boundary that determines whether an action may proceed,
+          even when a model is capable of generating or performing it.
+        </p>
       </div>
     </div>
   </div>
@@ -92,16 +133,62 @@
     </div>
 
     <div class="card">
-      <h3>Market Relevance</h3>
+      <h3>Signals Interpretation</h3>
       <p>
-        The need for authorization before execution is increasingly visible across AI deployments,
-        governance discussions, and operational control gaps.
+        Across capability gaps, execution gaps, and security failures,
+        the same architectural need keeps appearing:
+        AI can act, but there is no native layer deciding whether it is authorized to act.
       </p>
       <div class="spacer-24"></div>
-      <a class="btn btn-secondary" href="signals.html">View Market Signals</a>
+      <a class="btn btn-secondary" href="signals.html">View Signals</a>
     </div>
   </div>
 </section>
+
+<section class="section fade-in fade-delay-3">
+  <div class="container grid-2">
+    <div class="card">
+      <h3>MVP Validation</h3>
+      <p>
+        The MVP is focused on demonstrating that authorization can operate as an independent control layer
+        at the point of execution.
+      </p>
+      <div class="spacer-24"></div>
+      <a class="btn btn-secondary" href="mvp.html">Open MVP</a>
+    </div>
+
+    <div class="card">
+      <h3>Live Demonstration</h3>
+      <p>
+        The live demo is the operational extension of the MVP,
+        showing how authorization is applied before downstream execution proceeds.
+      </p>
+      <div class="spacer-24"></div>
+      <a class="btn btn-secondary" href="demo.html">Open Demo</a>
+    </div>
+  </div>
+</section>
+
+<section class="section fade-in fade-delay-3">
+  <div class="container">
+    <div class="card">
+      <h3>Core Interpretation</h3>
+      <p>
+        AI systems are advancing from generation to automation to action.
+        The unresolved question is no longer only what AI can do,
+        but what AI is allowed to do.
+      </p>
+
+      <div class="spacer-24"></div>
+
+      <p>
+        Certor™ is built around that exact boundary:
+        authorization before execution.
+      </p>
+    </div>
+  </div>
+</section>
+
 </main>
 
 <footer class="footer">
@@ -114,8 +201,11 @@
 <script>
   const header = document.getElementById('siteHeader');
   window.addEventListener('scroll', function () {
-    if (window.scrollY > 24) header.classList.add('scrolled');
-    else header.classList.remove('scrolled');
+    if (window.scrollY > 24) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
   });
 </script>
 
