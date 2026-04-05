@@ -27,153 +27,46 @@
 <main>
 
 <section class="hero fade-in">
-  <div class="container">
-    <div class="hero-grid">
+  <div class="container hero-grid">
+    <div class="fade-in fade-delay-1">
+      <div class="eyebrow">Research</div>
+      <h1>A structured research line for authorization in AI systems.</h1>
+      <p>
+        The Certor™ research line is organized as a progression from problem framing,
+        to architectural specification, to execution-layer validation.
+      </p>
+    </div>
 
-      <div class="fade-in fade-delay-1">
-        <div class="eyebrow">Research</div>
-
-        <h1>A structured research line for authorization in AI systems.</h1>
-
-        <p>
-          The Certor™ research line is organized as a progression from problem framing,
-          to architectural specification, to execution-layer validation.
-        </p>
+    <div class="panel fade-in fade-delay-2">
+      <div class="hero-visual">
+        <img src="stack.png" alt="Certor research architecture visual" />
       </div>
-
-      <div class="panel fade-in fade-delay-2">
-        <div class="hero-visual">
-          <img src="stack.png" alt="Certor research architecture visual" />
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
 
 <section class="section fade-in fade-delay-2">
   <div class="container">
-    <h2 class="section-title">Research Structure</h2>
-    <p class="section-sub">
-      The current material can be read as three connected layers:
-      concept, architecture, and validation.
-    </p>
-
     <div class="grid-3">
       <div class="card">
         <h3>Concept</h3>
-        <p>
-          Defines the authorization gap and introduces the principle of authority before execution.
-        </p>
+        <p>Defines the authorization gap and introduces the principle of authority before execution.</p>
+        <div class="spacer-24"></div>
+        <a class="btn btn-secondary" href="authority-before-execution/">Open</a>
       </div>
 
       <div class="card">
         <h3>Architecture</h3>
-        <p>
-          Specifies the structural placement of Certor as an authorization layer above execution.
-        </p>
+        <p>Specifies the structural placement of Certor as an authorization layer above execution.</p>
+        <div class="spacer-24"></div>
+        <a class="btn btn-secondary" href="authority-before-execution/architecture.html">Open</a>
       </div>
 
       <div class="card">
         <h3>Validation</h3>
-        <p>
-          Demonstrates MVP-level execution control through permit-based and decision-bound flow.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section fade-in fade-delay-2">
-  <div class="container">
-    <div class="hero-grid">
-
-      <div>
-        <h2 class="section-title">Foundational Concept</h2>
-        <p class="section-sub">
-          The foundational paper introduces the core problem:
-          current AI systems generate and act, but do not contain an independent authorization layer before execution.
-        </p>
-        <a class="btn btn-secondary" href="authority-before-execution/">Open Concept Paper</a>
-      </div>
-
-      <div class="card">
-        <h3>Authority Before Execution</h3>
-        <p>
-          The primary paper defining the missing authorization boundary in AI systems
-          and positioning Certor™ as a structural response.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section class="section fade-in fade-delay-3">
-  <div class="container">
-    <div class="hero-grid">
-
-      <div class="card">
-        <h3>Architecture Overview</h3>
-        <p>
-          A structural explanation of how Certor™ integrates above models, tools,
-          and downstream execution pathways as a governing layer.
-        </p>
-      </div>
-
-      <div>
-        <h2 class="section-title">Architectural Framing</h2>
-        <p class="section-sub">
-          The architecture material expands the concept into a layered execution model,
-          clarifying how authorization is separated from generation and applied at the action boundary.
-        </p>
-        <a class="btn btn-secondary" href="authority-before-execution/architecture.html">Open Architecture</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section class="section fade-in fade-delay-3">
-  <div class="container">
-    <div class="hero-grid">
-
-      <div>
-        <h2 class="section-title">Execution-Layer Validation</h2>
-        <p class="section-sub">
-          The MVP material focuses on validation:
-          proving that authorization can be enforced in real time before execution proceeds.
-        </p>
-        <a class="btn btn-secondary" href="mvp/">Review MVP</a>
-      </div>
-
-      <div class="card">
-        <h3>MVP Demonstration</h3>
-        <p>
-          The validation layer demonstrates permit-based execution control,
-          visible action outcomes, and real-time authorization logic.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section class="section fade-in fade-delay-3">
-  <div class="container">
-    <div class="card">
-      <h3>Reading Order</h3>
-      <p>
-        For first-time readers, the recommended order is:
-        foundational concept, architecture overview, then MVP validation.
-      </p>
-
-      <div class="spacer-24"></div>
-
-      <div class="hero-actions">
-        <a class="btn btn-secondary" href="authority-before-execution/">1. Concept</a>
-        <a class="btn btn-secondary" href="authority-before-execution/architecture.html">2. Architecture</a>
-        <a class="btn btn-secondary" href="mvp/">3. MVP</a>
+        <p>Demonstrates MVP-level execution control through permit-based and decision-bound flow.</p>
+        <div class="spacer-24"></div>
+        <a class="btn btn-secondary" href="mvp.html">Open</a>
       </div>
     </div>
   </div>
@@ -191,11 +84,8 @@
 <script>
   const header = document.getElementById('siteHeader');
   window.addEventListener('scroll', function () {
-    if (window.scrollY > 24) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
+    if (window.scrollY > 24) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
   });
 </script>
 
