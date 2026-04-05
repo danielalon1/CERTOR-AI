@@ -71,16 +71,16 @@ img{max-width:100%;display:block}
 }
 
 .brand-logo{
-  height:42px;
+  height:52px;   /* הגדלה */
   width:auto;
   display:block;
   opacity:.95;
   transition:all .25s ease;
 }
-
 .site-header.scrolled .brand-logo{
-  height:36px;
+  height:44px;
 }
+
 
 .brand-logo:hover{
   transform:translateY(-1px) scale(1.03);
@@ -94,14 +94,13 @@ img{max-width:100%;display:block}
 }
 
 .brand-title{
-  font-size:15px;
+  font-size:17px;   /* היה 15 */
   font-weight:700;
   color:#ffffff;
 }
 
 .brand-sub{
-  font-size:11px;
-  color:var(--muted);
+  font-size:12px;
 }
 
 .nav-links{
