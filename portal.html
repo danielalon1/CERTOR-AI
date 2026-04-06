@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Certor™ | Authorization Before Execution</title>
   <meta name="description" content="Certor™ is an independent authorization layer for AI systems, positioned before execution." />
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=6" />
 </head>
 <body>
 
@@ -64,120 +64,6 @@
       </div>
     </div>
   </section>
-
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title">Why This Matters</h2>
-      <p class="section-sub">
-        Across research, enterprise deployment, live tools, and agent security failures,
-        the same gap keeps appearing: systems gain capability faster than they gain control.
-      </p>
-
-      <div class="grid-3">
-        <div class="card">
-          <h3>Capability Is Rising</h3>
-          <p>Models are becoming stronger, cheaper, and more widely integrated across workflows and products.</p>
-        </div>
-
-        <div class="card">
-          <h3>Execution Is Expanding</h3>
-          <p>AI systems are moving beyond generation into tools, APIs, browsers, and action-taking environments.</p>
-        </div>
-
-        <div class="card">
-          <h3>Control Is Missing</h3>
-          <p>The missing layer is a decision boundary that determines whether execution should proceed at all.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container grid-2">
-      <div class="card">
-        <h3>Research Line</h3>
-        <p>
-          Certor™ is presented through a structured progression:
-          concept, architecture, and execution-layer validation.
-        </p>
-        <div class="spacer-24"></div>
-        <a class="btn btn-secondary" href="papers.html">Open Research</a>
-      </div>
-
-      <div class="card">
-        <h3>Signals Interpretation</h3>
-        <p>
-          The signals collected across the market point to one architectural conclusion:
-          AI systems need authority above the model layer and before downstream action.
-        </p>
-        <div class="spacer-24"></div>
-        <a class="btn btn-secondary" href="signals.html">View Signals</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title">Execution Flow</h2>
-      <p class="section-sub">
-        Certor™ is designed to sit between intent and action, introducing a control step
-        before execution is permitted.
-      </p>
-
-      <div class="grid-3">
-        <div class="card">
-          <h3>1. Request</h3>
-          <p>A model, user, or agent produces intent directed toward an action.</p>
-        </div>
-
-        <div class="card">
-          <h3>2. Authorization</h3>
-          <p>Certor evaluates whether execution should proceed under explicit control.</p>
-        </div>
-
-        <div class="card">
-          <h3>3. Execution</h3>
-          <p>Downstream action proceeds only after authorization is satisfied.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container grid-2">
-      <div class="card">
-        <h3>MVP Validation</h3>
-        <p>
-          The MVP demonstrates that authorization can operate as an independent control layer
-          at the point of execution.
-        </p>
-        <div class="spacer-24"></div>
-        <a class="btn btn-secondary" href="mvp.html">Open MVP</a>
-      </div>
-
-      <div class="card">
-        <h3>Live Demonstration</h3>
-        <p>
-          The live demo extends the thesis into an operational environment,
-          showing how execution can remain conditional on authorization.
-        </p>
-        <div class="spacer-24"></div>
-        <a class="btn btn-secondary" href="demo.html">Open Demo</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="card">
-        <h3>Positioning Statement</h3>
-        <p>
-          AI systems are evolving from generation to automation to action.
-          Certor™ introduces the layer that decides whether action is authorized before execution occurs.
-        </p>
-      </div>
-    </div>
-  </section>
 </main>
 
 <footer class="footer">
@@ -190,12 +76,10 @@
 <script>
   const header = document.getElementById('siteHeader');
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 24) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
+    if (window.scrollY > 24) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
   });
 </script>
+
 </body>
 </html>
