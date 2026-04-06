@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Certor™ Live Demo</title>
   <meta name="description" content="Live demonstration page for the Certor™ authorization layer for AI systems." />
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=6" />
 </head>
 <body>
 
@@ -32,7 +32,7 @@
 
 <main>
   <section class="hero">
-    <div class="container">
+    <div class="container hero-grid">
       <div class="hero-copy">
         <div class="eyebrow">Live Demonstration</div>
         <h1>Authorization at the execution boundary.</h1>
@@ -46,17 +46,15 @@
           <a class="btn btn-secondary" href="mvp.html">Read MVP Context</a>
         </div>
       </div>
+
+      <div class="hero-visual">
+        <img src="hero-gate.png" alt="Live demo authorization visual" />
+      </div>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <h2 class="section-title">What the Demo Is Intended to Show</h2>
-      <p class="section-sub">
-        The demonstration is not centered on model output alone.
-        It is centered on the authorization decision that precedes downstream action.
-      </p>
-
       <div class="grid-3">
         <div class="card">
           <h3>Request Intake</h3>
@@ -75,39 +73,6 @@
       </div>
     </div>
   </section>
-
-  <section class="section">
-    <div class="container grid-2">
-      <div class="card">
-        <h3>Current Demo Endpoint</h3>
-        <p>The current button is configured to open:</p>
-        <div class="spacer-24"></div>
-        <p><strong>http://127.0.0.1:8100</strong></p>
-        <div class="spacer-24"></div>
-        <p>Replace this address with the actual server endpoint you want to expose from the site.</p>
-      </div>
-
-      <div class="card">
-        <h3>Deployment Note</h3>
-        <p>
-          If the demo remains internal, this page can stay as a controlled entry point.
-          If you later expose the server behind a public domain or gateway, only the button URL needs to be updated.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="card">
-        <h3>Position in the Research Line</h3>
-        <p>
-          The live demonstration should be read as an operational extension of the MVP validation layer:
-          connecting the architectural claim to an actual execution environment.
-        </p>
-      </div>
-    </div>
-  </section>
 </main>
 
 <footer class="footer">
@@ -120,12 +85,10 @@
 <script>
   const header = document.getElementById('siteHeader');
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 24) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
+    if (window.scrollY > 24) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
   });
 </script>
+
 </body>
 </html>
