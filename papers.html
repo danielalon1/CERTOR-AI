@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Certor™ Research</title>
   <meta name="description" content="Research and papers related to the Certor™ authorization architecture for AI systems." />
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=6" />
 </head>
 <body>
 
@@ -32,7 +32,7 @@
 
 <main>
   <section class="hero">
-    <div class="container">
+    <div class="container hero-grid">
       <div class="hero-copy">
         <div class="eyebrow">Research</div>
         <h1>A structured research line for authorization in AI systems.</h1>
@@ -40,6 +40,10 @@
           The Certor™ research line is organized as a progression from problem framing,
           to architectural specification, to execution-layer validation.
         </p>
+      </div>
+
+      <div class="hero-visual">
+        <img src="signal-ai-stack-evolution.png" alt="AI stack evolution visual" />
       </div>
     </div>
   </section>
@@ -82,12 +86,10 @@
 <script>
   const header = document.getElementById('siteHeader');
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 24) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
+    if (window.scrollY > 24) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
   });
 </script>
+
 </body>
 </html>
