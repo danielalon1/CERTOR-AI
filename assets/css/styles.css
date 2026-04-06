@@ -411,3 +411,70 @@ img{
     padding:6px 8px;
   }
 }
+/* === SYSTEM STATUS (PORTAL) === */
+.system-status{
+  margin-top:18px;
+  font-size:13px;
+  color:#8fffa3;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  opacity:.85;
+}
+
+.system-status::before{
+  content:"";
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#5fff7a;
+  box-shadow:0 0 8px #5fff7a;
+}
+
+/* === HERO ALIGN FIX === */
+.hero-grid{
+  align-items:center;
+}
+
+/* === BUTTON UPGRADE === */
+.btn-secondary{
+  backdrop-filter:blur(6px);
+}
+
+/* === IMAGE HOVER EFFECT === */
+.hero-card img{
+  transition:transform .6s ease;
+}
+
+.hero-card:hover img{
+  transform:scale(1.04);
+}
+
+/* === SIGNAL CARD LABEL === */
+.signal-card{
+  position:relative;
+}
+
+.signal-card::before{
+  content:"Signal";
+  position:absolute;
+  top:12px;
+  right:12px;
+  font-size:10px;
+  color:#6f819c;
+  letter-spacing:.08em;
+}
+
+/* === ABOUT HIGHLIGHT === */
+.about-highlight{
+  margin-top:12px;
+  color:#9fb3d4;
+  font-size:15px;
+}
+
+/* === FOOTER UPGRADE === */
+.site-footer{
+  font-size:14px;
+  opacity:.85;
+}
+
