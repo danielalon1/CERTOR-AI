@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Certor™ MVP</title>
   <meta name="description" content="MVP validation page for the Certor™ authorization layer for AI systems." />
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=6" />
 </head>
 <body>
 
@@ -32,7 +32,7 @@
 
 <main>
   <section class="hero">
-    <div class="container">
+    <div class="container hero-grid">
       <div class="hero-copy">
         <div class="eyebrow">MVP Validation</div>
         <h1>Execution-layer authorization in practice.</h1>
@@ -46,17 +46,15 @@
           <a class="btn btn-secondary" href="papers.html">Research</a>
         </div>
       </div>
+
+      <div class="hero-visual">
+        <img src="signal-meta-rogue-agent.png" alt="MVP execution control visual" />
+      </div>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <h2 class="section-title">What Is Being Validated</h2>
-      <p class="section-sub">
-        The MVP is intended to validate a structural claim:
-        that authorization can operate as an independent control layer at the point of execution.
-      </p>
-
       <div class="grid-3">
         <div class="card">
           <h3>Permit-Based Flow</h3>
@@ -75,38 +73,6 @@
       </div>
     </div>
   </section>
-
-  <section class="section">
-    <div class="container grid-2">
-      <div class="card">
-        <h3>Why This Counts as Validation</h3>
-        <p>
-          The goal is not merely to display a UI or route prompts.
-          The goal is to show that downstream execution can remain conditional on a separate authorization layer.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>What Differentiates It from a Standard Demo</h3>
-        <p>
-          A standard demo typically shows what a system can do.
-          The Certor MVP is intended to show what a system is allowed to do, and under what authorization conditions.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="card">
-        <h3>MVP Position</h3>
-        <p>
-          The Certor™ MVP should be read as an execution-layer validation effort:
-          focused on proving a structural authorization model rather than presenting a conventional application interface.
-        </p>
-      </div>
-    </div>
-  </section>
 </main>
 
 <footer class="footer">
@@ -119,12 +85,10 @@
 <script>
   const header = document.getElementById('siteHeader');
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 24) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
+    if (window.scrollY > 24) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
   });
 </script>
+
 </body>
 </html>
