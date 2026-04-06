@@ -31,51 +31,45 @@
 </header>
 
 <main>
-<section class="hero fade-in">
-  <div class="container hero-grid">
-    <div class="fade-in fade-delay-1">
-      <div class="eyebrow">Research</div>
-      <h1>A structured research line for authorization in AI systems.</h1>
-      <p>
-        The Certor™ research line is organized as a progression from problem framing,
-        to architectural specification, to execution-layer validation.
-      </p>
-    </div>
-
-    <div class="panel fade-in fade-delay-2">
-      <div class="hero-visual">
-        <img src="stack.png" alt="Certor research architecture visual" />
+  <section class="hero">
+    <div class="container">
+      <div class="hero-copy">
+        <div class="eyebrow">Research</div>
+        <h1>A structured research line for authorization in AI systems.</h1>
+        <p>
+          The Certor™ research line is organized as a progression from problem framing,
+          to architectural specification, to execution-layer validation.
+        </p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section fade-in fade-delay-2">
-  <div class="container">
-    <div class="grid-3">
-      <div class="card">
-        <h3>Concept</h3>
-        <p>Defines the authorization gap and introduces the principle of authority before execution.</p>
-        <div class="spacer-24"></div>
-        <a class="btn btn-secondary" href="authority-before-execution/">Open</a>
-      </div>
+  <section class="section">
+    <div class="container">
+      <div class="grid-3">
+        <div class="card">
+          <h3>Concept</h3>
+          <p>Defines the authorization gap and introduces the principle of authority before execution.</p>
+          <div class="spacer-24"></div>
+          <a class="btn btn-secondary" href="authority-before-execution/">Open</a>
+        </div>
 
-      <div class="card">
-        <h3>Architecture</h3>
-        <p>Specifies the structural placement of Certor as an authorization layer above execution.</p>
-        <div class="spacer-24"></div>
-        <a class="btn btn-secondary" href="authority-before-execution/architecture.html">Open</a>
-      </div>
+        <div class="card">
+          <h3>Architecture</h3>
+          <p>Specifies the structural placement of Certor as an authorization layer above execution.</p>
+          <div class="spacer-24"></div>
+          <a class="btn btn-secondary" href="authority-before-execution/architecture.html">Open</a>
+        </div>
 
-      <div class="card">
-        <h3>Validation</h3>
-        <p>Demonstrates MVP-level execution control through permit-based and decision-bound flow.</p>
-        <div class="spacer-24"></div>
-        <a class="btn btn-secondary" href="mvp.html">Open</a>
+        <div class="card">
+          <h3>Validation</h3>
+          <p>Demonstrates MVP-level execution control through permit-based and decision-bound flow.</p>
+          <div class="spacer-24"></div>
+          <a class="btn btn-secondary" href="mvp.html">Open</a>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 </main>
 
 <footer class="footer">
@@ -87,11 +81,13 @@
 
 <script>
   const header = document.getElementById('siteHeader');
-  window.addEventListener('scroll', function () {
-    if (window.scrollY > 24) header.classList.add('scrolled');
-    else header.classList.remove('scrolled');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 24) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
   });
 </script>
-
 </body>
 </html>
