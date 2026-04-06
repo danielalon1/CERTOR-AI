@@ -31,67 +31,83 @@
 </header>
 
 <main>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-copy">
+        <div class="eyebrow">Live Demonstration</div>
+        <h1>Authorization at the execution boundary.</h1>
+        <p>
+          The Certor™ live demonstration is intended to show how authorization
+          is applied before downstream execution is allowed to proceed.
+        </p>
 
-<section class="hero fade-in">
-  <div class="container hero-grid">
-    <div>
-      <div class="eyebrow">Live Demonstration</div>
-      <h1>Authorization at the execution boundary.</h1>
-      <p>
-        The Certor™ live demonstration shows how authorization is applied
-        before downstream execution is allowed to proceed.
-      </p>
-
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="http://127.0.0.1:8100" target="_blank">Open Live Demo</a>
-        <a class="btn btn-secondary" href="mvp.html">MVP Context</a>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="http://127.0.0.1:8100" target="_blank" rel="noopener noreferrer">Open Live Demo</a>
+          <a class="btn btn-secondary" href="mvp.html">Read MVP Context</a>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="panel">
-      <div class="hero-visual">
-        <img src="mvp.png" alt="Demo visual" />
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">What the Demo Is Intended to Show</h2>
+      <p class="section-sub">
+        The demonstration is not centered on model output alone.
+        It is centered on the authorization decision that precedes downstream action.
+      </p>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>Request Intake</h3>
+          <p>A request enters the flow and is evaluated before execution rights are granted.</p>
+        </div>
+
+        <div class="card">
+          <h3>Authorization Decision</h3>
+          <p>The system returns a decision such as permit, defer, or block at the action boundary.</p>
+        </div>
+
+        <div class="card">
+          <h3>Controlled Outcome</h3>
+          <p>Downstream execution proceeds only when the authorization condition is satisfied.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section">
-  <div class="container grid-3">
-    <div class="card">
-      <h3>Request Intake</h3>
-      <p>A request enters the system before execution is allowed.</p>
+  <section class="section">
+    <div class="container grid-2">
+      <div class="card">
+        <h3>Current Demo Endpoint</h3>
+        <p>The current button is configured to open:</p>
+        <div class="spacer-24"></div>
+        <p><strong>http://127.0.0.1:8100</strong></p>
+        <div class="spacer-24"></div>
+        <p>Replace this address with the actual server endpoint you want to expose from the site.</p>
+      </div>
+
+      <div class="card">
+        <h3>Deployment Note</h3>
+        <p>
+          If the demo remains internal, this page can stay as a controlled entry point.
+          If you later expose the server behind a public domain or gateway, only the button URL needs to be updated.
+        </p>
+      </div>
     </div>
+  </section>
 
-    <div class="card">
-      <h3>Authorization Decision</h3>
-      <p>Permit / Defer / Block is decided before action.</p>
+  <section class="section">
+    <div class="container">
+      <div class="card">
+        <h3>Position in the Research Line</h3>
+        <p>
+          The live demonstration should be read as an operational extension of the MVP validation layer:
+          connecting the architectural claim to an actual execution environment.
+        </p>
+      </div>
     </div>
-
-    <div class="card">
-      <h3>Controlled Execution</h3>
-      <p>Execution only happens if authorization is valid.</p>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="section">
-  <div class="container">
-    <div class="card">
-      <h3>Contact</h3>
-      <p>
-        For demo access, technical discussion, or pilot collaboration:
-      </p>
-      <div class="spacer-24"></div>
-      <p>
-        <strong>Email:</strong>
-        <a href="mailto:contact@certor.ai">contact@certor.ai</a>
-      </p>
-    </div>
-  </div>
-</section>
-
+  </section>
 </main>
 
 <footer class="footer">
@@ -102,11 +118,14 @@
 </footer>
 
 <script>
-const header = document.getElementById('siteHeader');
-window.addEventListener('scroll', () => {
-  window.scrollY > 24 ? header.classList.add('scrolled') : header.classList.remove('scrolled');
-});
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 24) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
 </script>
-
 </body>
 </html>
