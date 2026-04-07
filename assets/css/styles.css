@@ -645,11 +645,11 @@ img{
 
 /* לוגו עליון קצת יותר גדול */
 .brand-logo{
-  height: 70px;
+  height: 80px;
 }
 
 .site-header.scrolled .brand-logo{
-  height: 60px;
+  height: 80px;
 }
 
 /* שם החברה ליד הלוגו */
