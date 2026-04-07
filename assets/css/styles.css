@@ -813,3 +813,12 @@ img{
     min-height: auto;
   }
 }
+.feature-card{
+  transition: all .25s ease;
+}
+
+.feature-card:hover{
+  transform: translateY(-4px);
+  border-color: rgba(120,170,255,.3);
+  box-shadow: 0 14px 40px rgba(0,0,0,.35);
+}
