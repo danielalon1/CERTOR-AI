@@ -1,144 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Certor™ Demo</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Certor™ Demo</title>
 
-  <link rel="stylesheet" href="assets/css/styles.css?v=20" />
+<link rel="stylesheet" href="assets/css/styles.css?v=21">
+
 </head>
 
 <body>
-<div class="page-shell">
 
-<header class="site-header" id="siteHeader">
-  <div class="container">
-    <div class="header-inner">
+<header class="site-header">
+  <div class="container header-inner">
 
-      <a class="brand" href="portal.html">
-        <img src="./certor-logo.png?v=20" class="brand-logo" />
-        <div class="brand-copy">
-          <div class="brand-title">Certor™</div>
-          <div class="brand-subtitle">Authority Before Execution</div>
-        </div>
-      </a>
-
-      <nav class="nav">
-        <a href="portal.html">Portal</a>
-        <a href="papers.html">Research</a>
-        <a href="mvp.html">MVP</a>
-        <a href="demo.html" class="active">Demo</a>
-        <a href="signals.html">Signals</a>
-        <a href="about.html">About</a>
-      </nav>
-
+    <div class="brand">
+      <img src="./certor-logo.png?v=21" class="brand-logo">
+      <div>
+        <div class="brand-title">Certor™</div>
+        <div class="brand-subtitle">Authority Before Execution</div>
+      </div>
     </div>
+
+    <nav class="nav">
+      <a href="portal.html">Portal</a>
+      <a href="papers.html">Research</a>
+      <a href="mvp.html">MVP</a>
+      <a href="demo.html" class="active">Demo</a>
+      <a href="signals.html">Signals</a>
+      <a href="about.html">About</a>
+    </nav>
+
   </div>
 </header>
 
-<main>
+<main class="container">
 
-<section class="hero">
-  <div class="container">
+  <section class="hero">
+
     <div class="hero-grid">
 
       <div>
-        <div class="eyebrow">Live Demo</div>
+        <div class="eyebrow">Live System</div>
 
         <h1 class="hero-title">
-          Authorization happens before execution.
+          Certor decides before execution.
         </h1>
 
         <p class="hero-copy">
-          This demo shows how Certor evaluates requests before allowing execution.
+          This is a real authorization flow. No simulation. No bypass.
         </p>
 
-        <div class="hero-actions">
-          <button id="runDemo" class="btn btn-primary">
-            Run Live Demo
-          </button>
-        </div>
+        <button class="btn-primary" onclick="runDemo()">
+          Run Live Demo
+        </button>
 
-        <div id="demoStatus" class="system-status">
-          Ready
-        </div>
+        <div id="status" class="status-box">Idle</div>
       </div>
 
       <div class="hero-media">
         <div class="hero-card">
-          <img src="demo-ai.png?v=20" />
+          <img src="demo-ai.png?v=21">
         </div>
       </div>
 
     </div>
-  </div>
-</section>
 
-<section class="section">
-  <div class="container">
+  </section>
 
-    <div class="card">
-      <h3>Result</h3>
-      <pre id="demoOutput" style="white-space:pre-wrap;"></pre>
+  <!-- RESULTS -->
+  <section>
+
+    <div class="result-card">
+
+      <div class="row">
+        <span>Decision</span>
+        <span id="decision" class="badge">-</span>
+      </div>
+
+      <div class="row">
+        <span>Execution</span>
+        <span id="execution" class="badge">-</span>
+      </div>
+
+      <div class="row">
+        <span>Reason</span>
+        <span id="reason">-</span>
+      </div>
+
+      <div class="row">
+        <span>Trace</span>
+        <span id="trace">-</span>
+      </div>
+
     </div>
 
-  </div>
-</section>
+  </section>
 
 </main>
 
 <footer class="site-footer">
-  <div class="container">
-    <div class="footer-inner">
-      <div>Certor Technologies Ltd.</div>
-      <div>© 2026 Daniel Alon</div>
-    </div>
+  <div class="container footer-inner">
+    <div>Certor Technologies Ltd.</div>
+    <div>© 2026 Daniel Alon</div>
   </div>
 </footer>
 
-</div>
-
 <script>
-const btn = document.getElementById("runDemo");
-const status = document.getElementById("demoStatus");
-const output = document.getElementById("demoOutput");
+async function runDemo(){
 
-btn.onclick = async () => {
+  const status = document.getElementById("status");
+  const decisionEl = document.getElementById("decision");
+  const executionEl = document.getElementById("execution");
+  const reasonEl = document.getElementById("reason");
+  const traceEl = document.getElementById("trace");
 
-  status.innerText = "Sending request to Gate...";
-  output.innerText = "";
-
-  const payload = {
-    request_id: crypto.randomUUID(),
-    actor: "web_demo",
-    intent: "demo_run",
-    action: "send_email",
-    resource: "demo@example.com",
-    context: {
-      source: "certor.ai",
-      mode: "demo"
-    }
-  };
+  status.innerText = "Processing...";
+  status.style.color = "#ffb300";
 
   try {
-    const res = await fetch("https://YOUR-GATE-ENDPOINT/demo/run", {
+
+    const res = await fetch("http://127.0.0.1:8100/demo/run", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(payload)
+      body: JSON.stringify({
+        request_id: crypto.randomUUID(),
+        actor: "web_demo",
+        intent: "send_email",
+        payload: {
+          resource: "demo@example.com"
+        }
+      })
     });
 
     const data = await res.json();
 
-    status.innerText = "Decision: " + data.decision;
-    output.innerText = JSON.stringify(data, null, 2);
+    const decision = data.decision.decision;
+    const execution = data.execution.status;
 
-  } catch (err) {
-    status.innerText = "Error connecting to Gate";
-    output.innerText = err.toString();
+    // Decision UI
+    decisionEl.innerText = decision;
+    decisionEl.className = "badge " +
+      (decision === "PERMIT" ? "permit" :
+       decision === "BLOCK" ? "block" : "defer");
+
+    // Execution UI
+    executionEl.innerText = execution;
+    executionEl.className = "badge exec";
+
+    reasonEl.innerText = data.decision.reason_code;
+
+    // Mask trace (Viewer Mode)
+    traceEl.innerText = data.decision.trace_id.slice(0,10) + "...";
+
+    status.innerText = "Completed";
+    status.style.color = "#00ffa3";
+
+  } catch (err){
+    status.innerText = "Connection Error";
+    status.style.color = "#ff4d4d";
   }
-};
+}
 </script>
 
 </body>
