@@ -831,3 +831,52 @@ img{
   border-color: rgba(120,170,255,.3);
   box-shadow: 0 14px 40px rgba(0,0,0,.35);
 }
+/* DEMO UI */
+
+.status-box{
+  margin-top:12px;
+  padding:10px;
+  background:#0b1a2b;
+  border-radius:8px;
+  color:#9fb3c8;
+}
+
+.result-card{
+  margin-top:20px;
+  padding:16px;
+  background:#0a1420;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.05);
+}
+
+.row{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:10px;
+}
+
+.badge{
+  padding:4px 10px;
+  border-radius:8px;
+  font-weight:bold;
+}
+
+.badge.permit{
+  background:rgba(0,255,150,0.2);
+  color:#00ffa3;
+}
+
+.badge.block{
+  background:rgba(255,0,0,0.2);
+  color:#ff4d4d;
+}
+
+.badge.defer{
+  background:rgba(255,180,0,0.2);
+  color:#ffb300;
+}
+
+.badge.exec{
+  background:rgba(0,200,255,0.2);
+  color:#00d4ff;
+}
